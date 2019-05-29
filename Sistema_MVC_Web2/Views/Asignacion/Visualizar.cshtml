@@ -1,7 +1,9 @@
 ﻿@model Sistema_MVC_Web2.Models.Asignacion
 @{
     ViewBag.Title = "Visualizar";
+
 }
+
 <h2>Visualizar</h2>
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
@@ -33,6 +35,10 @@
             <dd>@(Model.estado == "A" ? "Activo" : "Inactivo")</dd>
 
         </dl>
+
     </div>
 
+</div>
+<div id="vista2">
+    @{Html.RenderAction("DetalleAsignacion", "Asignacion", new ViewDataDictionary(new { id = Model.asignacion_id })); }
 </div>

@@ -13,20 +13,24 @@ namespace Sistema_MVC_Web2.Controllers
     {
         private Asignacion objAsignacion = new Asignacion();
         private Semestre objSemestre = new Semestre();
-        //private DetalleAsignacion objDetalleAsignacion = new DetalleAsignacion();
+
+        //Segunda Tabla 
+        private DetalleAsignacion objDetalleAsignacion = new DetalleAsignacion();
+        private Docente objDocente = new Docente();
+        private Criterio objCriterio = new Criterio();
         // GET: Asignacion
         public ActionResult Index()
         {
             return View(objAsignacion.Listar());
         }
 
-        //Accion visualizar
+        //accion visualizar
         public ActionResult Visualizar(int id)
         {
             return View(objAsignacion.Obtener(id));
         }
 
-        //Acccion agregar editar
+        //acccion agregar editar
         public ActionResult AgregarEditar(int id = 0)
         {
             ViewBag.Semestre = objSemestre.Listar();
@@ -36,7 +40,7 @@ namespace Sistema_MVC_Web2.Controllers
                 );
         }
 
-        //Accion Guardar
+        //accion Guardar
         public ActionResult Guardar(Asignacion objAsignacion)
         {
             if (ModelState.IsValid)
@@ -58,6 +62,12 @@ namespace Sistema_MVC_Web2.Controllers
             objAsignacion.asignacion_id = id;
             objAsignacion.Eliminar();
             return Redirect("~/Asignacion");
+        }
+
+        public ActionResult DetalleAsignacion(int id)
+        {
+            ViewBag.id = id;
+            return View(objDetalleAsignacion.Listar());
         }
     }
 }
