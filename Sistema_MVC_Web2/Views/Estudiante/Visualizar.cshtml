@@ -1,0 +1,52 @@
+﻿
+@model Sistema_MVC_Web2.Models.Estudiante
+
+@{
+    ViewBag.Title = "Vizualizar";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2 class="card" text-center>Visualizar</h2>
+<br />
+
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a href="~/Estudiante/Index">Estudiante</a>
+        </li>
+        <li class="breadcrumb-item active">@(Model.estudiante_id > 0 ? Model.nombre : "Nuevo Registro")</li>
+
+    </ol>
+</nav>
+
+<div class="card">
+    <div class="card-header">Informacion de Estudiante </div>
+    <div class="card-body">
+        <dl class="dl-horizontal">
+            <dt>Id</dt>
+            <dd>@Model.estudiante_id</dd>
+            <dt>Codigo</dt>
+            <dd>@Model.estudiante_codigo</dd>
+            <dt>Dni</dt>
+            <dd>@Model.dni</dd>
+            <dt>Apellidos</dt>
+            <dd>@Model.apellido</dd>
+            <dt>Nombre</dt>
+            <dd>@Model.nombre</dd>
+            <dt>Sexo</dt>
+            <dd>@Model.sexo</dd>
+            <dt>Email</dt>
+            <dd>@Model.email</dd>
+            <dt>Direccion</dt>
+            <dd>@Model.direccion</dd>
+            <dt>Celular</dt>
+            <dd>@Model.celular</dd>
+            <dt>Foto</dt>
+            <dd>@Model.foto</dd>
+            <dt>Estado</dt>
+            <dd>@Model.estado</dd>
+        </dl>
+
+    </div>
+</div>
+

@@ -1,0 +1,38 @@
+﻿@model Sistema_MVC_Web2.Models.Asignacion
+@{
+    ViewBag.Title = "Visualizar";
+}
+<h2>Visualizar</h2>
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a href="~/Asignacion/Index">Asignacion</a>
+        </li>
+        <li class="breadcrumb-item" active>@Model.titulo</li>
+
+    </ol>
+
+</nav>
+<div class="card">
+    <div class="card-header">
+        Informacion detallada del asignacion
+
+    </div>
+    <div class="card-body">
+        <dl class="dl-horizontal">
+            <dt>Id</dt>
+            <dd>@Model.asignacion_id</dd>
+            <dt>Semestre</dt>
+            <dd>@Model.Semestre.nombre</dd>
+            <dt>titulo</dt>
+            <dd>@Model.titulo</dd>
+            <dt>Fecha Registro</dt>
+            <dd>@Model.fecharegistro</dd>
+
+            <dt>Estado</dt>
+            <dd>@(Model.estado == "A" ? "Activo" : "Inactivo")</dd>
+
+        </dl>
+    </div>
+
+</div>

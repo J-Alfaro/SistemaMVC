@@ -1,0 +1,53 @@
+﻿@model List<Sistema_MVC_Web2.Models.Asignacion>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2 class="card" text-center>Gestion de Asignacion</h2>
+<br />
+<div class="text-right">
+    <a href="~/Asignacion/AgregarEditar/" class="btn btn-secondary text-right">
+        Nuevo registro
+    </a>
+</div>
+<br />
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th style="width:50px">ID  </th>
+            <th style="width:100px">Semestre  </th>
+            <th style="width:70px">Asignacion  </th>
+            <th style="width:80px">Fecha  </th>
+            <th style="width:80px">Estado  </th>
+            @*<th style="width:80px">Detalle Asignacion  </th>
+                <th style="width:80px">Docente  </th>
+                <th style="width:80px">Criterio  </th>
+                <th style="width:80px">Estado  </th>*@
+            <th style="width:200px">Acciones  </th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var a in Model)
+        {
+            <tr>
+                <th>@(a.asignacion_id)</th>
+                <th>@( a.Semestre.nombre)</th>
+                <th>@(a.titulo)</th>
+                <th>@(a.fecharegistro)</th>
+                <th>@(a.estado == "A" ? "Activo" : "Inactivo")</th>
+                <th style="align-content:center">
+                    <a href="~/Asignacion/Visualizar/@a.asignacion_id" class="btn btn-xs btn-warning">Visualizar</a>
+                    <a href="~/Asignacion/AgregarEditar/@a.asignacion_id" class="btn btn-xs btn-primary">Modificar</a>
+                    <a href="~/Asignacion/Eliminar/@a.asignacion_id" class="btn btn-xs btn-danger" onclick="return confirm('¿Esta Seguro de Eliminar.........?');">Eliminar</a>
+                </th>
+                @*<th>@(a.DetalleAsignacion.detalleasignacion_id)</th>
+                    <th>@(a.DetalleAsignacion.Docente)</th>
+                    <th>@(a.DetalleAsignacion.Docente)</th>
+                    <th>@(a.DetalleAsignacion.Criterio)</th>*@
+            </tr>
+        }
+    </tbody>
+</table>

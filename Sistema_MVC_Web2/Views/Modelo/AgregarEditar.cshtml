@@ -1,0 +1,67 @@
+﻿@model Sistema_MVC_Web2.Models.Modelo
+@{
+    ViewBag.Title = "AgregarEditar";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>AgregarEditar</h2>
+
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a href="~/Modelo/Index">Modelo</a>
+        </li>
+        <li class="breadcrumb-item" active>
+
+            @(Model.modelo_id > 0 ? Model.nombre : "Nuevo Registro")
+        </li>
+
+    </ol>
+
+</nav>
+
+@using (Html.BeginForm("Guardar", "Modelo", FormMethod.Post, new { id = "frm-modelo" }))
+{
+    @Html.HiddenFor(x => x.modelo_id)
+    <div class="card">
+        <div class="card-header">
+            Informacion de Modelo
+        </div>
+        <div class="card-body">
+            <div class="form-group">
+                @Html.Label("Id")
+                @Html.TextBoxFor(x => x.modelo_id, new { @class = "form-control", disabled = true })
+
+            </div>
+            <div class="form-group">
+                @Html.Label("Nombre")
+                @Html.TextBoxFor(x => x.nombre, new { @class = "form-control" })
+                @Html.ValidationMessageFor(x => x.nombre, null, new { @class = "text-danger" })
+
+            </div>
+            <div class="form-group">
+                @Html.Label("descripcion")
+                @Html.TextBoxFor(x => x.descripcion, new { @class = "form-control" })
+                @Html.ValidationMessageFor(x => x.descripcion, null, new { @class = "text-danger" })
+
+            </div>
+            <div class="form-group">
+                @Html.Label("Estado")
+                <select name="estado" class="form-control">
+                    <option @(Model.estado == "" ? "Selected" : "") value="">-Seleccione-</option>
+                    <option @(Model.estado == "A" ? "Selected" : "") value="A">Activo</option>
+                    <option @(Model.estado == "I" ? "Selected" : "") value="I">Inactivo</option>
+                </select>
+
+            </div>
+        </div>
+
+    </div>
+    <br />
+    <div class="text-right">
+        <button type="submit" class="btn btn-primary">Grabar</button>
+        <a href="~/Modelo" class="btn btn-danger">Cancelar</a>
+
+    </div>
+
+}

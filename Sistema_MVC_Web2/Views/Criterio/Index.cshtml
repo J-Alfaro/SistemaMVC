@@ -1,0 +1,48 @@
+﻿@model List<Sistema_MVC_Web2.Models.Criterio>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2 class="card" text-center>Gestion de Criterio</h2>
+<br />
+<div class="text-right">
+    <a href="~/Criterio/AgregarEditar/" class="btn btn-secondary text-right">
+        Nuevo registro
+    </a>
+</div>
+<br />
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th style="width:50px">ID  </th>
+            <th style="width:100px">Modelo  </th>
+            <th style="width:70px">nombre Español  </th>
+            <th style="width:80px">Nombre Ingles  </th>
+            @*<th style="width:80px">URL Criterio  </th>*@
+            <th style="width:200px">Descripcion  </th>
+            <th style="width:30px">Estado  </th>
+            <th style="width:300px">Acciones  </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var u in Model)
+        {
+            <tr>
+                <th>@(u.criterio_id)</th>
+                <th>@(u.Modelo.nombre)</th>
+                <th>@(u.nombre_spanish)</th>
+                <th>@(u.nombre_english)</th>
+                @*<th>@(u.urlcriterio)</th>*@
+                <th>@(u.descripcion)</th>
+                <th>@(u.estado == "A" ? "Activo" : "Inactivo")</th>
+                <th style="align-content:center">
+                    <a href="~/Criterio/Visualizar/@u.criterio_id" class="btn btn-xs btn-warning">Visualizar</a>
+                    <a href="~/Criterio/AgregarEditar/@u.criterio_id" class="btn btn-xs btn-primary">Modificar</a>
+                    <a href="~/Criterio/Eliminar/@u.criterio_id" class="btn btn-xs btn-danger" onclick="return confirm('¿Esta Seguro de Eliminar.........?');">Eliminar</a>
+                </th>
+            </tr>
+        }
+    </tbody>
+</table>

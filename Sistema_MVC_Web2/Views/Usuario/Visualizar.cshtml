@@ -1,0 +1,44 @@
+﻿@model Sistema_MVC_Web2.Models.Usuario
+@{
+    ViewBag.Title = "Visualizar";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>Visualizar</h2>
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a href="~/Usuario/Index">Docente</a>
+        </li>
+        <li class="breadcrumb-item active">@Model.nombre</li>
+
+    </ol>
+</nav>
+
+<div class="card">
+    <div class="card-header">
+        Informacion detallada
+    </div>
+    <div class="card-body">
+        <dl class="dl-horizontal">
+            <dt>Id</dt>
+            <dd>@Model.usuario_id</dd>
+            <dt>Docente</dt>
+            <dd>@Model.Docente.nombre, @Model.Docente.apellido</dd>
+            <dt>Usuario</dt>
+            <dd>@Model.nombre</dd>
+            <dt>Id</dt>
+            <dd>@Model.usuario_id</dd>
+            <dt>Semestre</dt>
+            <dd>@Model.nombre</dd>
+            <dt>Nivel</dt>
+            <dd>@Model.nivel</dd>
+            <dt>Avatar</dt>
+            <dd><img src="~/Imagenes/@Model.avatar" width="100" height="100" /></dd>
+            <dt>Estado</dt>
+            <dd>@(Model.estado == "A" ? "Activo" : "Inactivo")</dd>
+        </dl>
+    </div>
+</div>
+
+

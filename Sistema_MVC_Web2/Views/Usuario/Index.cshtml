@@ -1,0 +1,50 @@
+﻿@model List<Sistema_MVC_Web2.Models.Usuario>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2 class="card" text-center>Gestion de Usuarios</h2>
+
+<br />
+<div class="text-right">
+    <a href="~/Usuario/AgregarEditar/" class="btn btn-secondary text-right">Nuevo registro </a>
+</div>
+
+<br />
+<table id="datatable" class="table table-bordered">
+    <thead>
+        <tr>
+            <th style="width:50px">Id</th>
+            <th style="width:100px">Docente</th>
+            <th style="width:70px">Nombre</th>
+            <th style="width:70px">Nivel</th>
+            <th style="width:80px">Avatar</th>
+            <th style="width:80px">Estado</th>
+            <th style="width:200px">Acciones</th>
+
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var u in Model)
+        {
+            <tr>
+                <th>@(u.usuario_id)</th>
+                <th>@(u.Docente.apellido), @(u.Docente.nombre)</th>
+                <th>@(u.nombre)</th>
+                <th>@(u.nivel)</th>
+                <th><img src="~/Imagenes/@u.avatar" width="50" height="50" /></th>
+                <th>@(u.estado == "A" ? "Activo" : "Inactivo")</th>
+                <th style="text-align:center;">
+                    <a href="~/Usuario/Visualizar/@u.usuario_id" class="btn btn-xs btn-warning">Visualizar</a>
+                    <a href="~/Usuario/AgregarEditar/@u.usuario_id" class="btn btn-xs btn-primary">Modificar</a>
+                    <a href="~/Usuario/Eliminar/@u.usuario_id" class="btn btn-xs btn-danger" onclick="return confirm('¿Estas seguro qu desea eliminar?');">Eliminar</a>
+                </th>
+            </tr>
+        }
+    </tbody>
+</table>
+
+

@@ -1,0 +1,56 @@
+﻿@model List<Sistema_MVC_Web2.Models.Estudiante>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2 class="card" text-center>Gestion de Estudiante</h2>
+
+<br />
+<div class="text-right">
+    <a href="~/Estudiante/AgregarEditar/" class="btn btn-secondary text-right">Nuevo Registro</a>
+</div>
+<br />
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th style="width:20px">Id</th>
+            <th style="width:50px">Dni</th>
+            <th style="width:100px">Apellidos</th>
+            <th style="width:50px">Nombre</th>
+            <th style="width:50px">Email</th>
+            <th style="width:40px">Foto</th>
+            <th style="width:20px">Estado</th>
+            <th style="width:300px">Acciones</th>
+
+
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var s in Model)
+        {
+            <tr>
+                <th>@(s.estudiante_id)</th>
+                <th>@(s.dni)</th>
+                <th>@(s.apellido)</th>
+                <th>@(s.nombre)</th>
+                <th>@(s.email)</th>
+                <th>@(s.foto)</th>
+                <th>@(s.estado == "A" ? "Activo" : "Inactivo")</th>
+
+                <th style="text-align:center;">
+                    <a href="~/Estudiante/Visualizar/@s.estudiante_id" class="btn btn-xs btn-warning">Visualizar</a>
+                    <a href="~/Estudiante/AgregarEditar/@s.estudiante_id" class="btn btn-xs btn-primary">Modificar</a>
+                    <a href="~/Estudiante/Eliminar/@s.estudiante_id" class="btn btn-xs btn-danger" onclick="return confirm('¿Estas seguro qu desea eliminar?');">Eliminar</a>
+                </th>
+
+            </tr>
+
+        }
+
+    </tbody>
+</table>
+

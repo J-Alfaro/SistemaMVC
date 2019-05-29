@@ -1,0 +1,46 @@
+﻿@model List<Sistema_MVC_Web2.Models.Modelo>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+
+<h2 class="card" text-center>Gestion de Modelo</h2>
+<br />
+<div class="text-right">
+    <a href="~/Modelo/AgregarEditar/" class="btn btn-secondary text-right">
+        Nuevo registro
+    </a>
+</div>
+<br />
+
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th style="width:50px">ID  </th>
+            <th style="width:100px">nombre  </th>
+            <th style="width:70px">descripcion  </th>
+            <th style="width:80px">Estado  </th>
+            <th style="width:80px">Acciones</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var s in Model)
+        {
+            <tr>
+                <th>@(s.modelo_id)</th>
+                <th>@(s.nombre)</th>
+                <th>@(s.descripcion)</th>
+                <th>@(s.estado == "A" ? "Activo" : "Inactivo")</th>
+                <th style="align-content:center">
+                    <a href="~/Modelo/Visualizar/@s.modelo_id" class="btn btn-xs btn-warning">Visualizar</a>
+                    <a href="~/Modelo/AgregarEditar/@s.modelo_id" class="btn btn-xs btn-primary">Modificar</a>
+                    <a href="~/Modelo/Eliminar/@s.modelo_id" class="btn btn-xs btn-danger" onclick="return confirm('¿Esta Seguro de Eliminar.........?');">Eliminar</a>
+                </th>
+            </tr>
+        }
+    </tbody>
+</table>
+

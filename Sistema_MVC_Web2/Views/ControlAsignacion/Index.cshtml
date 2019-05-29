@@ -1,0 +1,64 @@
+﻿@model List<Sistema_MVC_Web2.Models.ControlAsignacion>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2 class="card" text-center>Gestion de ControlAsignacion</h2>
+<br />
+<div class="text-right">
+    <a href="~/ControlAsignacion/AgregarEditar/" class="btn btn-secondary text-right">
+        Nuevo registro
+    </a>
+</div>
+<br />
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th style="width:50px">ID  </th>
+            <th style="width:100px">Detalle Asignacion  </th>
+            <th style="width:70px">Docente  </th>
+            <th style="width:80px">Criterio  </th>
+            <th style="width:80px">Fecha Asignacion  </th>
+            <th style="width:80px">fecha Culminacion  </th>
+            <th style="width:80px">Duracion  </th>
+            <th style="width:80px">sustento  </th>
+            <th style="width:80px">porcentaje  </th>
+
+            <th style="width:80px">condicion  </th>
+            <th style="width:80px">Archivo  </th>
+            <th style="width:80px">Observacion  </th>
+            <th style="width:80px">Estado  </th>
+            <th style="width:200px">Acciones  </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var u in Model)
+        {
+            <tr>
+                <th>@(u.controlasignacion_id)</th>
+                <th>@(u.DetalleAsignacion.estado)</th>
+                <th>@(u.Docente.apellido ),@( u.Docente.nombre)</th>
+                <th>@(u.Criterio.descripcion)</th>
+                <th>@(u.fechaasignacion)</th>
+                <th>@(u.fechaculminacion)</th>
+                <th>@(u.duracion)</th>
+                <th>@(u.sustento)</th>
+                <th>@(u.porcentaje)</th>
+                <th>@(u.condicion)</th>
+                <th>@(u.archivo)</th>
+
+                <th>@(u.observacion)</th>
+
+                <th>@(u.estado == "A" ? "Activo" : "Inactivo")</th>
+                <th style="align-content:center">
+                    <a href="~/ControlAsignacion/Visualizar/@u.controlasignacion_id" class="btn btn-xs btn-warning">Visualizar</a>
+                    <a href="~/ControlAsignacion/AgregarEditar/@u.controlasignacion_id" class="btn btn-xs btn-primary">Modificar</a>
+                    <a href="~/ControlAsignacion/Eliminar/@u.controlasignacion_id" class="btn btn-xs btn-danger" onclick="return confirm('¿Esta Seguro de Eliminar.........?');">Eliminar</a>
+                </th>
+            </tr>
+        }
+    </tbody>
+</table>
+

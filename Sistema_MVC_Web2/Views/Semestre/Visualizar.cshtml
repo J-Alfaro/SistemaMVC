@@ -1,0 +1,36 @@
+﻿@model Sistema_MVC_Web2.Models.Semestre
+
+@{
+    ViewBag.Title = "Visualizar";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>Visualizar</h2>
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a href="~/Semestre/Index">Semestre</a>
+        </li>
+        <li class="breadcrumb-item active">@Model.nombre</li>
+
+    </ol>
+</nav>
+
+<div class="card">
+    <div class="card-header">
+        Informacion detallada
+    </div>
+    <div class="card-body">
+        <dl class="dl-horizontal">
+            <dt>Id</dt>
+            <dd>@Model.semestre_id</dd>
+            <dt>Semestre</dt>
+            <dd>@Model.nombre</dd>
+            <dt>Año</dt>
+            <dd>@Model.anio</dd>
+            <dt>Estado</dt>
+            <dd>@(Model.estado == "A" ? "Activo" : "Inactivo")</dd>
+        </dl>
+    </div>
+</div>
+

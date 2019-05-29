@@ -1,0 +1,40 @@
+﻿@model List<Sistema_MVC_Web2.Models.DetalleAsignacion>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2 class="card" text-center>Gestion de DetalleAsignacion</h2>
+<br />
+<div class="text-right">
+    <a href="~/DetalleAsignacion/AgregarEditar/" class="btn btn-secondary text-right">Nuevo registro</a>
+</div>
+<br />
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th style="width:50px">ID  </th>
+            <th style="width:100px">Docente  </th>
+            <th style="width:70px">Titulo  </th>
+            <th style="width:80px">Criterio  </th>
+            <th style="width:80px">Estado  </th>
+            <th style="width:300px">Acciones  </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var u in Model)
+        {
+            <tr>
+                <th>@(u.detalleasignacion_id)</th>
+                <th>@(u.Docente.apellido ),@( u.Docente.nombre)</th>
+                <th>@(u.Asignacion.titulo)</th>
+                <th>@(u.Criterio.descripcion)</th>
+                <th>@(u.estado == "A" ? "Activo" : "Inactivo")</th>
+                <th style="align-content:center">
+                    <a href="~/DetalleAsignacion/Visualizar/@u.detalleasignacion_id" class="btn btn-xs btn-warning">Visualizar</a>
+                    <a href="~/DetalleAsignacion/AgregarEditar/@u.detalleasignacion_id" class="btn btn-xs btn-primary">Modificar</a>
+                    <a href="~/DetalleAsignacion/Eliminar/@u.detalleasignacion_id" class="btn btn-xs btn-danger" onclick="return confirm('¿Esta Seguro de Eliminar.........?');">Eliminar</a>
+                </th>
+            </tr>
+        }
+    </tbody>
+</table>

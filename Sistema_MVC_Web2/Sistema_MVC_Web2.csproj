@@ -214,6 +214,33 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Layout.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\Actividad\Index.cshtml" />
+    <Content Include="Views\Asignacion\Index.cshtml" />
+    <Content Include="Views\Asignacion\Visualizar.cshtml" />
+    <Content Include="Views\Asignacion\AgregarEditar.cshtml" />
+    <Content Include="Views\ControlAsignacion\Index.cshtml" />
+    <Content Include="Views\Criterio\Index.cshtml" />
+    <Content Include="Views\Criterio\Visualizar.cshtml" />
+    <Content Include="Views\Criterio\AgregarEditar.cshtml" />
+    <Content Include="Views\DetalleAsignacion\Index.cshtml" />
+    <Content Include="Views\DetalleAsignacion\Visualizar.cshtml" />
+    <Content Include="Views\DetalleAsignacion\AgregarEditar.cshtml" />
+    <Content Include="Views\Docente\Index.cshtml" />
+    <Content Include="Views\Docente\Visualizar.cshtml" />
+    <Content Include="Views\Docente\AgregarEditar.cshtml" />
+    <Content Include="Views\Estudiante\Index.cshtml" />
+    <Content Include="Views\Estudiante\Visualizar.cshtml" />
+    <Content Include="Views\Estudiante\AgregarEditar.cshtml" />
+    <Content Include="Views\Modelo\Index.cshtml" />
+    <Content Include="Views\Modelo\Visualizar.cshtml" />
+    <Content Include="Views\Modelo\AgregarEditar.cshtml" />
+    <Content Include="Views\Perfil\Index.cshtml" />
+    <Content Include="Views\Semestre\Index.cshtml" />
+    <Content Include="Views\Semestre\Visualizar.cshtml" />
+    <Content Include="Views\Semestre\AgregarEditar.cshtml" />
+    <Content Include="Views\Usuario\Index.cshtml" />
+    <Content Include="Views\Usuario\Visualizar.cshtml" />
+    <Content Include="Views\Usuario\AgregarEditar.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -223,17 +250,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Actividad\" />
-    <Folder Include="Views\Asignacion\" />
-    <Folder Include="Views\ControlAsignacion\" />
-    <Folder Include="Views\Criterio\" />
-    <Folder Include="Views\DetalleAsignacion\" />
-    <Folder Include="Views\Docente\" />
-    <Folder Include="Views\Estudiante\" />
-    <Folder Include="Views\Modelo\" />
-    <Folder Include="Views\Perfil\" />
-    <Folder Include="Views\Semestre\" />
-    <Folder Include="Views\Usuario\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

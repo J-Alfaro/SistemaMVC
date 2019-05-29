@@ -1,0 +1,56 @@
+﻿
+@model Sistema_MVC_Web2.Models.Docente
+
+@{
+    ViewBag.Title = "Vizualizar";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2 class="card" text-center>Visualizar</h2>
+<br />
+
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a href="~/Docente/Index">Docente</a>
+        </li>
+        <li class="breadcrumb-item active">@(Model.docente_id > 0 ? Model.nombre : "Nuevo Registro")</li>
+
+    </ol>
+</nav>
+
+<div class="card">
+    <div class="card-header">Informacion de Docente </div>
+    <div class="card-body">
+        <dl class="dl-horizontal">
+            <dt>Id</dt>
+            <dd>@Model.docente_id</dd>
+            <dt>Codigo</dt>
+            <dd>@Model.docente_codigo</dd>
+            <dt>Dni</dt>
+            <dd>@Model.dni</dd>
+            <dt>Apellidos</dt>
+            <dd>@Model.apellido</dd>
+            <dt>Nombre</dt>
+            <dd>@Model.nombre</dd>
+            <dt>Sexo</dt>
+            <dd>@Model.sexo</dd>
+            <dt>Email</dt>
+            <dd>@Model.email</dd>
+            <dt>Celular</dt>
+            <dd>@Model.celular</dd>
+            <dt>Cargo</dt>
+            <dd>@Model.cargo</dd>
+            <dt>Condicion</dt>
+            <dd>@Model.condicion</dd>
+            <dt>Categoria</dt>
+            <dd>@Model.categoria</dd>
+            <dt>Foto</dt>
+            <dd><img src="~/Imagenes/@Model.foto" width="150" height="150" /></dd>
+            <dt>Estado</dt>
+            <dd>@Model.estado</dd>
+        </dl>
+
+    </div>
+</div>
+
