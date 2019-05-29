@@ -4,11 +4,10 @@
     Layout = "~/Views/Shared/Layout.cshtml";
 }
 
-<h2>Visualizar</h2>
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
         <li class="breadcrumb-item">
-            <a href="~/Usuario/Index">Docente</a>
+            <a href="~/Usuario/Index">Usuario</a>
         </li>
         <li class="breadcrumb-item active">@Model.nombre</li>
 
@@ -16,9 +15,9 @@
 </nav>
 
 <div class="card">
-    <div class="card-header">
+    <h5 class="card-header">
         Informacion detallada
-    </div>
+    </h5>
     <div class="card-body">
         <dl class="dl-horizontal">
             <dt>Id</dt>
