@@ -8,6 +8,7 @@ namespace Sistema_MVC_Web2.Models
     using System.Linq;
     using System.Data.Entity;
 
+
     [Table("DetalleAsignacion")]
     public partial class DetalleAsignacion
     {
