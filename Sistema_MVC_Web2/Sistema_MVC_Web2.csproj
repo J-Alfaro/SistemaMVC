@@ -186,9 +186,23 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Actividad.cs" />
+    <Compile Include="Models\Asignacion.cs" />
+    <Compile Include="Models\Control.cs" />
+    <Compile Include="Models\ControlAsignacion.cs" />
+    <Compile Include="Models\Criterio.cs" />
+    <Compile Include="Models\DetalleAsignacion.cs" />
+    <Compile Include="Models\Docente.cs" />
+    <Compile Include="Models\Estudiante.cs" />
+    <Compile Include="Models\EvidenciaActividad.cs" />
+    <Compile Include="Models\EvidenciaCriterio.cs" />
     <Compile Include="Models\HashHelper.cs" />
+    <Compile Include="Models\Modelo.cs" />
+    <Compile Include="Models\Modelo_Sistemas.cs" />
     <Compile Include="Models\ResponseModel.cs" />
+    <Compile Include="Models\Semestre.cs" />
     <Compile Include="Models\SessionHelper.cs" />
+    <Compile Include="Models\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
