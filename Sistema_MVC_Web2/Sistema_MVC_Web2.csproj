@@ -151,6 +151,10 @@
     <Content Include="assets\js\jquery.js" />
     <Content Include="assets\js\jquery.validate.min.js" />
     <Content Include="assets\js\jquery.validate.unobtrusive.min.js" />
+    <Content Include="assets\login\estilo_login.css" />
+    <Content Include="assets\login\login.js" />
+    <Content Include="assets\login\login.svg" />
+    <Content Include="assets\login\logo_login.png" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
