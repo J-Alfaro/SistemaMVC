@@ -8,6 +8,11 @@ namespace Sistema_MVC_Web2.Models
     using System.Linq;
     using System.Data.Entity;
 
+
+    using System.Data.Entity.Validation;
+    using System.Web;
+    using System.IO;
+
     [Table("Usuario")]
     public partial class Usuario
     {
