@@ -102,6 +102,8 @@
     <Content Include="assets\css\bootstrap-reboot.min.css" />
     <Content Include="assets\css\bootstrap.css" />
     <Content Include="assets\css\bootstrap.min.css" />
+    <Content Include="assets\DataTables\bootstrap.min.css" />
+    <Content Include="assets\DataTables\dashboard.css" />
     <Content Include="assets\DataTables\DataTables-1.10.18\css\dataTables.bootstrap.css" />
     <Content Include="assets\DataTables\DataTables-1.10.18\css\dataTables.bootstrap.min.css" />
     <Content Include="assets\DataTables\DataTables-1.10.18\css\dataTables.bootstrap4.css" />
@@ -131,10 +133,15 @@
     <Content Include="assets\DataTables\DataTables-1.10.18\js\dataTables.semanticui.min.js" />
     <Content Include="assets\DataTables\DataTables-1.10.18\js\jquery.dataTables.js" />
     <Content Include="assets\DataTables\DataTables-1.10.18\js\jquery.dataTables.min.js" />
+    <Content Include="assets\DataTables\dataTables.bootstrap4.min.css" />
+    <Content Include="assets\DataTables\dataTables.bootstrap4.min.js" />
     <Content Include="assets\DataTables\datatables.css" />
     <Content Include="assets\DataTables\datatables.js" />
     <Content Include="assets\DataTables\datatables.min.css" />
     <Content Include="assets\DataTables\datatables.min.js" />
+    <Content Include="assets\DataTables\jquery.dataTables.min.js" />
+    <Content Include="assets\DataTables\jquery.min.js" />
+    <Content Include="assets\DataTables\popper.js" />
     <Content Include="assets\js\bootstrap.bundle.min.js" />
     <Content Include="assets\js\bootstrap.js" />
     <Content Include="assets\js\bootstrap.min.js" />

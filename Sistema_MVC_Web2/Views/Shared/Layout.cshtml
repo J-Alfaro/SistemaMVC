@@ -17,10 +17,12 @@
     <link href="~/assets/css/bootstrap.min.css" rel="stylesheet" />
 
     <!--Datatables-->
-    <link href="~/assets/DataTables/datatables.min.css" rel="stylesheet" />
+    @*<link href="~/assets/DataTables/datatables.min.css" rel="stylesheet" />
     <link href="~/assets/DataTables/DataTables-1.10.18/css/dataTables.semanticui.min.css" rel="stylesheet" />
-    <link href="~/assets/DataTables/DataTables-1.10.18/css/dataTables.foundation.min.css" rel="stylesheet" />
+    <link href="~/assets/DataTables/DataTables-1.10.18/css/dataTables.foundation.min.css" rel="stylesheet" />*@
 
+    <link href="~/assets/DataTables/dataTables.bootstrap4.min.css" rel="stylesheet" />
+    @*<link href="~/assets/DataTables/dashboard.css" rel="stylesheet" />*@
     <!--Jquery-->
     <script src="~/assets/js/jquery-3.3.0.min.js"></script>
 
@@ -123,40 +125,17 @@
     <script src="~/assets/js/bootstrap.min.js"></script>
 
     <!--Datatables-->
-    <script src="~/assets/DataTables/datatables.min.js"></script>
+    @*<script src="~/assets/DataTables/datatables.min.js"></script>*@
 
-    <!--Response model-->
-    <script src="~/assets/js/ini.js"></script>
-    <script src="~/assets/js/jquery.form.js"></script>
-    <script src="~/assets/js/jquery.validate.min.js"></script>
-    <script src="~/assets/js/jquery.validate.unobtrusive.min.js"></script>
+    @*<script src="~/assets/DataTables/jquery.min.js"></script>
+        <script src="~/assets/DataTables/popper.js"></script>*@
 
+
+    <script src="~/assets/DataTables/jquery.dataTables.min.js"></script>
+    <script src="~/assets/DataTables/dataTables.bootstrap4.min.js"></script>
     <script>
-
-
-        $(document).ready(function () {
-            $('#datatablevertical').DataTable({
-                "scrollY": "200px",
-                "scrollCollapse": true,
-                "paging": false
-            });
-        });
-
-
-
-        $(document).ready(function () {
+        $(function (e) {
             $('#example').DataTable({
-                "scrollX": true
-            });
-        });
-
-        $(document).ready(function () {
-            $('#example').DataTable();
-        });
-
-        $(document).ready(function () {
-            $("#datatable").DataTable({
-
                 "aLengthMenu": [[5, 10, 25, 50, 100, -1], [5, 10, 25, 50, 100, "Todos"]],
                 "bDestroy": true,
                 "language": {
@@ -184,10 +163,22 @@
                     }
                 }
             });
+        });</script>
 
-        });
+    
 
-    </script>
+
+
+    <!--Response model-->
+    <script src="~/assets/js/ini.js"></script>
+    <script src="~/assets/js/jquery.form.js"></script>
+    <script src="~/assets/js/jquery.validate.min.js"></script>
+    <script src="~/assets/js/jquery.validate.unobtrusive.min.js"></script>
+
+
+
+
+
 
 </body>
 </html>
