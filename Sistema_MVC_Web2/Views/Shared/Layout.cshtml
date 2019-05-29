@@ -1,0 +1,193 @@
+﻿
+@{
+    Layout = null;
+    string controlador = ViewContext.RouteData.Values["controller"].ToString().ToLower();
+    Sistema_MVC_Web2.Models.Usuario usuario = new Sistema_MVC_Web2.Models.Usuario().Obtener(Sistema_MVC_Web2.Models.SessionHelper.GetUser());
+
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Sistema MVC</title>
+    <!--Boostrap-->
+    <link href="~/assets/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/assets/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!--Datatables-->
+    <link href="~/assets/DataTables/datatables.min.css" rel="stylesheet" />
+    <link href="~/assets/DataTables/DataTables-1.10.18/css/dataTables.semanticui.min.css" rel="stylesheet" />
+    <link href="~/assets/DataTables/DataTables-1.10.18/css/dataTables.foundation.min.css" rel="stylesheet" />
+
+    <!--Jquery-->
+    <script src="~/assets/js/jquery-3.3.0.min.js"></script>
+
+</head>
+<body>
+    @if (controlador != "login")
+    {
+        <nav class="navbar navbar-light navbar-expand-lg" style="background-color: #0A245F">
+            <a class="navbar-brand" href="#" style="color:#ffffff">Sistema Web</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color:#ffffff">
+                            Mantenimiento
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="~/Semestre/Index">Semestre</a>
+                            <a class="dropdown-item" href="~/Criterio/Index">Criterio</a>
+                            <a class="dropdown-item" href="~/Docente/Index">Docente</a>
+                            <a class="dropdown-item" href="~/Usuario/Index">Usuarios</a>
+                            <a class="dropdown-item" href="~/Modelo/Index">Modelo</a>
+                            <a class="dropdown-item" href="~/Estudiante/Index">Estudiante</a>
+                            <a class="dropdown-item" href="~/Usuario/Index">Usuario</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="~/Asignacion/Index">Asignacion</a>
+                            <a class="dropdown-item" href="~/DetalleAsignacion/Index">Detalle Asignacion</a>
+                            <a class="dropdown-item" href="~/ControlAsignacion/Index">Control</a>
+                        </div>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color:#ffffff">
+                            Consultas
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="~/Semestre/Consulta">Semestre</a>
+                            <a class="dropdown-item" href="~/Criterio/Consulta">Criterio</a>
+                            <a class="dropdown-item" href="~/Docente/Consulta">Docente</a>
+                            <a class="dropdown-item" href="~/Usuario/Consulta">Usuarios</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="~/Asignacion/Consulta">Asignacion</a>
+                            <a class="dropdown-item" href="~/Control/Consulta">Control</a>
+                        </div>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color:#ffffff">
+                            Reportes
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="~/Semestre/Reportes">Semestre</a>
+                            <a class="dropdown-item" href="~/Criterio/Reportes">Criterio</a>
+                            <a class="dropdown-item" href="~/Docente/Reportes">Docente</a>
+                            <a class="dropdown-item" href="~/Usuario/Reportes">Usuarios</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="~/Asignacion/Reportes">Asignacion</a>
+                            <a class="dropdown-item" href="~/Control/Reportes">Control</a>
+                        </div>
+                    </li>
+                </ul>
+
+
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"
+                           role="button" aria-haspopup="true" aria-expanded="false" style="color:#EBA507">
+                            <img id="user-pic" src="~/Imagenes/@usuario.avatar" width="40" height="40" />
+                            <b style="color:#EBA507">Bienvenido: </b>, @usuario.Docente.nombre, @usuario.Docente.apellido <span class="caret"></span>
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="~/Perfil/index">Perfil de Usuario</a>
+                            <a class="dropdown-item" href="~/Login/logout">Cerrar Sesi�n</a>
+                        </div>
+
+                    </li>
+                </ul>
+
+            </div>
+        </nav>
+
+    }
+    <div class="container">
+        <h1 class="jumbotron">
+            <center>Sistema MVC</center>
+        </h1>
+        @RenderBody()
+    </div>
+    <!--Boostrap-->
+    <script src="~/assets/js/bootstrap.min.js"></script>
+
+    <!--Datatables-->
+    <script src="~/assets/DataTables/datatables.min.js"></script>
+
+    <!--Response model-->
+    <script src="~/assets/js/ini.js"></script>
+    <script src="~/assets/js/jquery.form.js"></script>
+    <script src="~/assets/js/jquery.validate.min.js"></script>
+    <script src="~/assets/js/jquery.validate.unobtrusive.min.js"></script>
+
+    <script>
+
+
+        $(document).ready(function () {
+            $('#datatablevertical').DataTable({
+                "scrollY": "200px",
+                "scrollCollapse": true,
+                "paging": false
+            });
+        });
+
+
+
+        $(document).ready(function () {
+            $('#example').DataTable({
+                "scrollX": true
+            });
+        });
+
+        $(document).ready(function () {
+            $('#example').DataTable();
+        });
+
+        $(document).ready(function () {
+            $("#datatable").DataTable({
+
+                "aLengthMenu": [[5, 10, 25, 50, 100, -1], [5, 10, 25, 50, 100, "Todos"]],
+                "bDestroy": true,
+                "language": {
+                    "sProcessing": "Procesando...",
+                    "sLengthMenu": "Mostrar _MENU_ registros",
+                    "sZeroRecords": "No se encontraron resultados",
+                    "sEmptyTable": "Ning?n dato disponible en esta tabla",
+                    "sInfo": "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+                    "sInfoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
+                    "sInfoFiltered": "(filtrado de un total de _MAX_ registros)",
+                    "sInfoPostFix": "",
+                    "sSearch": "Buscar:",
+                    "sUrl": "",
+                    "sInfoThousands": ",",
+                    "sLoadingRecords": "Cargando...",
+                    "oPaginate": {
+                        "sFirst": "Primero",
+                        "sLast": "?ltimo",
+                        "sNext": "Siguiente",
+                        "sPrevious": "Anterior"
+                    },
+                    "oAria": {
+                        "sSortAscending": ": Activar para ordenar la columna de manera ascendente",
+                        "sSortDescending": ": Activar para ordenar la columna de manera descendente"
+                    }
+                }
+            });
+
+        });
+
+    </script>
+
+</body>
+</html>
