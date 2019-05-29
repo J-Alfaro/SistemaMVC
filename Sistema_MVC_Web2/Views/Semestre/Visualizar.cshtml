@@ -5,7 +5,6 @@
     Layout = "~/Views/Shared/Layout.cshtml";
 }
 
-<h2>Visualizar</h2>
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
         <li class="breadcrumb-item">
@@ -17,20 +16,21 @@
 </nav>
 
 <div class="card">
-    <div class="card-header">
-        Informacion detallada
-    </div>
+    <h5 class="card-header">Informacion Detallada</h5>
     <div class="card-body">
-        <dl class="dl-horizontal">
-            <dt>Id</dt>
-            <dd>@Model.semestre_id</dd>
-            <dt>Semestre</dt>
-            <dd>@Model.nombre</dd>
-            <dt>Año</dt>
-            <dd>@Model.anio</dd>
-            <dt>Estado</dt>
-            <dd>@(Model.estado == "A" ? "Activo" : "Inactivo")</dd>
-        </dl>
+        <div class="card-body">
+            <dl class="dl-horizontal">
+                <dt>Id</dt>
+                <dd>@Model.semestre_id</dd>
+                <dt>Semestre</dt>
+                <dd>@Model.nombre</dd>
+                <dt>Año</dt>
+                <dd>@Model.anio</dd>
+                <dt>Estado</dt>
+                <dd>@(Model.estado == "A" ? "Activo" : "Inactivo")</dd>
+            </dl>
+        </div>
     </div>
 </div>
+
 

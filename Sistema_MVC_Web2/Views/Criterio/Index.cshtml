@@ -3,46 +3,54 @@
     ViewBag.Title = "Index";
 }
 
-<h2 class="card" text-center>Gestion de Criterio</h2>
-<br />
-<div class="text-right">
-    <a href="~/Criterio/AgregarEditar/" class="btn btn-secondary text-right">
-        Nuevo registro
-    </a>
+<div class="card">
+    <h5 class="card-header">Lista de Criterio</h5>
+    <div class="card-body">
+        <div class="text-right">
+            <a href="~/Criterio/AgregarEditar/" class="btn btn-primary text-right">
+                Nuevo registro
+            </a>
+        </div>
+        <br />
+        <table id="example" class="table table-hover">
+            <thead>
+                <tr>
+                    <th style="width:50px">ID  </th>
+                    <th style="width:100px">Modelo  </th>
+                    <th style="width:70px">nombre Español  </th>
+                    <th style="width:80px">Nombre Ingles  </th>
+                    @*<th style="width:80px">URL Criterio  </th>*@
+                    <th style="width:200px">Descripcion  </th>
+                    <th style="width:30px">Estado  </th>
+                    <th style="width:300px">Acciones  </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var u in Model)
+                {
+                    <tr>
+                        <td>@(u.criterio_id)</td>
+                        <td>@(u.Modelo.nombre)</td>
+                        <td>@(u.nombre_spanish)</td>
+                        <td>@(u.nombre_english)</td>
+                        @*<th>@(u.urlcriterio)</th>*@
+                        <td>@(u.descripcion)</td>
+                        @if (u.estado == "A")
+                        {
+                            <td><span class="badge badge-success">Activo</span></td>
+                        }
+                        else
+                        {
+                            <td><span class="badge badge-danger">Inactivo</span></td>
+                        }
+                        <td style="align-content:center">
+                            <a href="~/Criterio/Visualizar/@u.criterio_id" class="btn btn-xs btn-warning btn-sm">Visualizar</a>
+                            <a href="~/Criterio/AgregarEditar/@u.criterio_id" class="btn btn-xs btn-primary btn-sm">Modificar</a>
+                            <a href="~/Criterio/Eliminar/@u.criterio_id" class="btn btn-xs btn-danger btn-sm" onclick="return confirm('¿Esta Seguro de Eliminar.........?');">Eliminar</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
 </div>
-<br />
-
-
-<table class="table">
-    <thead>
-        <tr>
-            <th style="width:50px">ID  </th>
-            <th style="width:100px">Modelo  </th>
-            <th style="width:70px">nombre Español  </th>
-            <th style="width:80px">Nombre Ingles  </th>
-            @*<th style="width:80px">URL Criterio  </th>*@
-            <th style="width:200px">Descripcion  </th>
-            <th style="width:30px">Estado  </th>
-            <th style="width:300px">Acciones  </th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var u in Model)
-        {
-            <tr>
-                <th>@(u.criterio_id)</th>
-                <th>@(u.Modelo.nombre)</th>
-                <th>@(u.nombre_spanish)</th>
-                <th>@(u.nombre_english)</th>
-                @*<th>@(u.urlcriterio)</th>*@
-                <th>@(u.descripcion)</th>
-                <th>@(u.estado == "A" ? "Activo" : "Inactivo")</th>
-                <th style="align-content:center">
-                    <a href="~/Criterio/Visualizar/@u.criterio_id" class="btn btn-xs btn-warning">Visualizar</a>
-                    <a href="~/Criterio/AgregarEditar/@u.criterio_id" class="btn btn-xs btn-primary">Modificar</a>
-                    <a href="~/Criterio/Eliminar/@u.criterio_id" class="btn btn-xs btn-danger" onclick="return confirm('¿Esta Seguro de Eliminar.........?');">Eliminar</a>
-                </th>
-            </tr>
-        }
-    </tbody>
-</table>

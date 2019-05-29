@@ -5,41 +5,47 @@
     Layout = "~/Views/Shared/Layout.cshtml";
 }
 
-<h2 class="card" text-center>Gestion de Semestres</h2>
+<div class="card">
+    <h5 class="card-header">Lista de Semestres</h5>
+    <div class="card-body">
+        <div class="text-right">
+            <a href="~/Semestre/AgregarEditar/" class="btn btn-primary text-right">Nuevo Registro</a>
+        </div>
+        <br />
+        <table id="example" class="table table-hover">
+            <thead>
+                <tr>
+                    <th style="width:50px">Id</th>
+                    <th style="width:100px">Semestre</th>
+                    <th style="width:70px">Año</th>
+                    <th style="width:80px">Estado</th>
+                    <th style="width:200px">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var s in Model)
+                {
+                    <tr>
+                        <td>@(s.semestre_id)</td>
+                        <td>@(s.nombre)</td>
+                        <td>@(s.anio)</td>
 
-<br />
-<div class="text-right">
-    <a href="~/Semestre/AgregarEditar/" class="btn btn-secondary text-right">Nuevo Registro</a>
+                        @if (s.estado == "A")
+                        {
+                            <td><span class="badge badge-success">Activo</span></td>
+                        }
+                        else
+                        {
+                            <td><span class="badge badge-danger">Inactivo</span></td>
+                        }
+                        <td style="text-align:center;">
+                            <a href="~/Semestre/Visualizar/@s.semestre_id" class="btn btn-xs btn-warning btn-sm">Visualizar</a>
+                            <a href="~/Semestre/AgregarEditar/@s.semestre_id" class="btn btn-xs btn-primary btn-sm">Modificar</a>
+                            <a href="~/Semestre/Eliminar/@s.semestre_id" class="btn btn-xs btn-danger btn-sm" onclick="return confirm('¿Estas seguro qu desea eliminar?');">Eliminar</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
 </div>
-<br />
-
-<table class="table table-bordered">
-    <thead>
-        <tr>
-            <th style="width:50px">Id</th>
-            <th style="width:100px">Semestre</th>
-            <th style="width:70px">Año</th>
-            <th style="width:80px">Estado</th>
-            <th style="width:200px">Acciones</th>
-
-
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var s in Model)
-        {
-            <tr>
-                <th>@(s.semestre_id)</th>
-                <th>@(s.nombre)</th>
-                <th>@(s.anio)</th>
-                <th>@(s.estado == "A" ? "Activo" : "Inactivo")</th>
-                <th style="text-align:center;">
-                    <a href="~/Semestre/Visualizar/@s.semestre_id" class="btn btn-xs btn-warning">Visualizar</a>
-                    <a href="~/Semestre/AgregarEditar/@s.semestre_id" class="btn btn-xs btn-primary">Modificar</a>
-                    <a href="~/Semestre/Eliminar/@s.semestre_id" class="btn btn-xs btn-danger" onclick="return confirm('¿Estas seguro qu desea eliminar?');">Eliminar</a>
-                </th>
-            </tr>
-        }
-    </tbody>
-</table>
-

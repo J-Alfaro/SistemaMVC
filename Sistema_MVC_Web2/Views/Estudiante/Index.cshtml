@@ -4,53 +4,62 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/Layout.cshtml";
 }
+<div class="card">
+    <h5 class="card-header">Lista de Estudiantes</h5>
+    <div class="card-body">
+        <div class="text-right">
+            <a href="~/Estudiante/AgregarEditar/" class="btn btn-primary text-right">Nuevo Registro</a>
+        </div>
+        <br />
+        <table id="example" class="table table-hover">
+            <thead>
+                <tr>
+                    <th style="width:20px">Id</th>
+                    <th style="width:50px">Dni</th>
+                    <th style="width:100px">Apellidos</th>
+                    <th style="width:50px">Nombre</th>
+                    <th style="width:50px">Email</th>
+                    <th style="width:40px">Foto</th>
+                    <th style="width:20px">Estado</th>
+                    <th style="width:300px">Acciones</th>
 
-<h2 class="card" text-center>Gestion de Estudiante</h2>
 
-<br />
-<div class="text-right">
-    <a href="~/Estudiante/AgregarEditar/" class="btn btn-secondary text-right">Nuevo Registro</a>
+                </tr>
+            </thead>
+
+            <tbody>
+                @foreach (var s in Model)
+                {
+                <tr>
+                    <td>@(s.estudiante_id)</td>
+                    <td>@(s.dni)</td>
+                    <td>@(s.apellido)</td>
+                    <td>@(s.nombre)</td>
+                    <td>@(s.email)</td>
+                    <td>@(s.foto)</td>
+                    @if (s.estado == "A")
+                    {
+                        <td><span class="badge badge-success">Activo</span></td>
+                    }
+                    else
+                    {
+                        <td><span class="badge badge-danger">Inactivo</span></td>
+                    }
+
+                    <td style="text-align:center;">
+                        <a href="~/Estudiante/Visualizar/@s.estudiante_id" class="btn btn-xs btn-warning btn-sm">Visualizar</a>
+                        <a href="~/Estudiante/AgregarEditar/@s.estudiante_id" class="btn btn-xs btn-primary btn-sm">Modificar</a>
+                        <a href="~/Estudiante/Eliminar/@s.estudiante_id" class="btn btn-xs btn-danger btn-sm" onclick="return confirm('¿Estas seguro qu desea eliminar?');">Eliminar</a>
+                    </td>
+
+                </tr>
+
+                }
+
+            </tbody>
+        </table>
+
+    </div>
 </div>
-<br />
 
-<table class="table table-bordered">
-    <thead>
-        <tr>
-            <th style="width:20px">Id</th>
-            <th style="width:50px">Dni</th>
-            <th style="width:100px">Apellidos</th>
-            <th style="width:50px">Nombre</th>
-            <th style="width:50px">Email</th>
-            <th style="width:40px">Foto</th>
-            <th style="width:20px">Estado</th>
-            <th style="width:300px">Acciones</th>
-
-
-        </tr>
-    </thead>
-
-    <tbody>
-        @foreach (var s in Model)
-        {
-            <tr>
-                <th>@(s.estudiante_id)</th>
-                <th>@(s.dni)</th>
-                <th>@(s.apellido)</th>
-                <th>@(s.nombre)</th>
-                <th>@(s.email)</th>
-                <th>@(s.foto)</th>
-                <th>@(s.estado == "A" ? "Activo" : "Inactivo")</th>
-
-                <th style="text-align:center;">
-                    <a href="~/Estudiante/Visualizar/@s.estudiante_id" class="btn btn-xs btn-warning">Visualizar</a>
-                    <a href="~/Estudiante/AgregarEditar/@s.estudiante_id" class="btn btn-xs btn-primary">Modificar</a>
-                    <a href="~/Estudiante/Eliminar/@s.estudiante_id" class="btn btn-xs btn-danger" onclick="return confirm('¿Estas seguro qu desea eliminar?');">Eliminar</a>
-                </th>
-
-            </tr>
-
-        }
-
-    </tbody>
-</table>
 

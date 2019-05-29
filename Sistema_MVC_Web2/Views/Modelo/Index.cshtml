@@ -5,42 +5,51 @@
 }
 
 
-<h2 class="card" text-center>Gestion de Modelo</h2>
-<br />
-<div class="text-right">
-    <a href="~/Modelo/AgregarEditar/" class="btn btn-secondary text-right">
-        Nuevo registro
-    </a>
+<div class="card">
+    <h5 class="card-header">Lista de Modelos</h5>
+    <div class="card-body">
+        <div class="text-right">
+            <a href="~/Modelo/AgregarEditar/" class="btn btn-primary text-right">
+                Nuevo registro
+            </a>
+        </div>
+        <br />
+        <table id="example" class="table table-hover">
+            <thead>
+                <tr>
+                    <th >ID  </th>
+                    <th >nombre  </th>
+                    <th >descripcion  </th>
+                    <th >Estado  </th>
+                    <th style="width:250px">Acciones</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var s in Model)
+                {
+                <tr>
+                    <td>@(s.modelo_id)</td>
+                    <td>@(s.nombre)</td>
+                    <td>@(s.descripcion)</td>
+                    @if (s.estado == "A")
+                    {
+                        <td><span class="badge badge-success">Activo</span></td>
+                    }
+                    else
+                    {
+                        <td><span class="badge badge-danger">Inactivo</span></td>
+                    }
+                    <td style="align-content:center">
+                        <a href="~/Modelo/Visualizar/@s.modelo_id" class="btn btn-xs btn-warning btn-sm">Visualizar</a>
+                        <a href="~/Modelo/AgregarEditar/@s.modelo_id" class="btn btn-xs btn-primary btn-sm">Modificar</a>
+                        <a href="~/Modelo/Eliminar/@s.modelo_id" class="btn btn-xs btn-danger btn-sm" onclick="return confirm('¿Esta Seguro de Eliminar.........?');">Eliminar</a>
+                    </td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
 </div>
-<br />
 
-
-<table class="table table-bordered">
-    <thead>
-        <tr>
-            <th style="width:50px">ID  </th>
-            <th style="width:100px">nombre  </th>
-            <th style="width:70px">descripcion  </th>
-            <th style="width:80px">Estado  </th>
-            <th style="width:80px">Acciones</th>
-
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var s in Model)
-        {
-            <tr>
-                <th>@(s.modelo_id)</th>
-                <th>@(s.nombre)</th>
-                <th>@(s.descripcion)</th>
-                <th>@(s.estado == "A" ? "Activo" : "Inactivo")</th>
-                <th style="align-content:center">
-                    <a href="~/Modelo/Visualizar/@s.modelo_id" class="btn btn-xs btn-warning">Visualizar</a>
-                    <a href="~/Modelo/AgregarEditar/@s.modelo_id" class="btn btn-xs btn-primary">Modificar</a>
-                    <a href="~/Modelo/Eliminar/@s.modelo_id" class="btn btn-xs btn-danger" onclick="return confirm('¿Esta Seguro de Eliminar.........?');">Eliminar</a>
-                </th>
-            </tr>
-        }
-    </tbody>
-</table>
 
