@@ -242,6 +242,8 @@
     <Content Include="Views\Usuario\Visualizar.cshtml" />
     <Content Include="Views\Usuario\AgregarEditar.cshtml" />
     <Content Include="Views\Asignacion\DetalleAsignacion.cshtml" />
+    <Content Include="Views\ControlAsignacion\AgregarEditar.cshtml" />
+    <Content Include="Views\ControlAsignacion\Visualizar.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
