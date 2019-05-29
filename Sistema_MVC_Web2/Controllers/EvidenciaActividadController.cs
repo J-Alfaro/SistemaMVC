@@ -44,7 +44,7 @@ namespace Sistema_MVC_Web2.Controllers
                 {
                     string archivo = (file.FileName).ToLower();
 
-                    file.SaveAs(Server.MapPath("~/Archivos/" + file.FileName));
+                    file.SaveAs(Server.MapPath("~/Imagenes/" + file.FileName));
 
                     objEvidenciaActividad.archivo = file.FileName;
                     objEvidenciaActividad.tamanio = Path.GetExtension(file.FileName);

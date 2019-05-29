@@ -43,7 +43,7 @@
                 @Html.Label("Archivo")
                 @if (Model.evidenciaactividad_id > 0)
                 {
-                    <img src="~/Archivos/@Model.archivo" height="80" width="80" />
+                    <img src="~/Imagenes/" height="80" width="80" />
                     @Html.HiddenFor(x => x.archivo)
                 }
                 <input type="file" class="btn btn-default btn-file" name="file" />
