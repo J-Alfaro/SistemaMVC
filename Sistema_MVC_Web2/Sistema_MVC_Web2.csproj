@@ -187,6 +187,7 @@
     <Compile Include="Controllers\DetalleAsignacionController.cs" />
     <Compile Include="Controllers\DocenteController.cs" />
     <Compile Include="Controllers\EstudianteController.cs" />
+    <Compile Include="Controllers\EvidenciaActividadController.cs" />
     <Compile Include="Controllers\EvidenciaCriterioController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
@@ -259,6 +260,9 @@
     <Content Include="Views\EvidenciaCriterio\AgregarEditar.cshtml" />
     <Content Include="Views\ControlAsignacion\AgregarEditar.cshtml" />
     <Content Include="Views\ControlAsignacion\Visualizar.cshtml" />
+    <Content Include="Views\EvidenciaActividad\Index.cshtml" />
+    <Content Include="Views\EvidenciaActividad\Visualizar.cshtml" />
+    <Content Include="Views\EvidenciaActividad\AgregarEditar.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
