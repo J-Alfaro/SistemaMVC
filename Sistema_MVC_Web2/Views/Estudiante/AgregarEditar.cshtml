@@ -4,13 +4,10 @@
     ViewBag.Title = "AgregarEditar";
 }
 
-<h2 class="card" text-center>Agregar</h2>
-<br />
-
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
         <li class="breadcrumb-item">
-            <a href="~/Docente/Index">Docente</a>
+            <a href="~/Estudiante/Index">Estudiante</a>
         </li>
         <li class="breadcrumb-item" active>
 
@@ -25,9 +22,9 @@
 {
     @Html.HiddenFor(x => x.estudiante_id)
     <div class="card">
-        <div class="card-header">
-            Informacion de Docente
-        </div>
+        <h5 class="card-header">
+            Agregar / Editar Docente
+        </h5>
         <div class="card-body">
             <div class="form-group">
                 @Html.Label("Id")
