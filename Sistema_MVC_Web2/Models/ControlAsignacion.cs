@@ -5,6 +5,8 @@ namespace Sistema_MVC_Web2.Models
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
+    using System.Linq;
+    using System.Data.Entity;
 
     [Table("ControlAsignacion")]
     public partial class ControlAsignacion
@@ -55,5 +57,92 @@ namespace Sistema_MVC_Web2.Models
         public virtual DetalleAsignacion DetalleAsignacion { get; set; }
 
         public virtual Docente Docente { get; set; }
+
+
+        public List<ControlAsignacion> Listar()//Retorna una coleccion de registros
+        {
+            var objControlAsignacion = new List<ControlAsignacion>();
+            try
+            {
+                using (var db = new Modelo_Sistemas())
+                {
+                    objControlAsignacion = db.ControlAsignacion.Include("DetalleAsignacion").Include("Docente").Include("Criterio").ToList();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+            return objControlAsignacion;
+        }
+
+        //Metodo obtener
+        public ControlAsignacion Obtener(int id)//retorna solo un objeto
+        {
+            var objControlAsignacion = new ControlAsignacion();
+            try
+            {
+                using (var db = new Modelo_Sistemas())
+                {
+                    objControlAsignacion = db.ControlAsignacion.Include("DetalleAsignacion").Include("Docente").Include("Criterio")
+                        .Where(x => x.controlasignacion_id == id)
+                        .SingleOrDefault();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+            return objControlAsignacion;
+        }
+
+        //Metodo guardar
+        public void Guardar()//retorna solo un objeto
+        {
+
+            try
+            {
+                using (var db = new Modelo_Sistemas())
+                {
+                    if (this.controlasignacion_id > 0)
+                    {
+                        //si existe un valor mayor a 0 es porque existe un registro
+                        db.Entry(this).State = EntityState.Modified;
+
+                    }
+                    else
+                    {
+                        //si no existe registro graba(nuevo registro)
+                        db.Entry(this).State = EntityState.Added;
+
+                    }
+                    db.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+
+        }
+
+        //metodo Eliminar
+        public void Eliminar()
+        {
+
+            try
+            {
+                using (var db = new Modelo_Sistemas())
+                {
+                    db.Entry(this).State = EntityState.Deleted;
+                    db.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+
+        }
     }
 }
