@@ -5,37 +5,49 @@
     //ViewData["id"];
     //ViewBag.id;
 }
-
-
-<table class="table">
-    <thead>
-        <tr>
-            <th style="width:50px">ID  </th>
-            <th style="width:100px">Docente  </th>
-            <th style="width:70px">Titulo  </th>
-            <th style="width:80px">Criterio  </th>
-            <th style="width:80px">Estado  </th>
-            <th style="width:200px">Acciones  </th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var u in Model)
-        {
-            if (u.asignacion_id == Convert.ToInt32(ViewBag.id))
-            {
+<br />
+<div class="card">
+    <h5 class="card-header">Lista Detalle Asignacion</h5>
+    <div class="card-body">
+        <table id="example" class="table table-hover">
+            <thead>
                 <tr>
-                    <th>@(u.detalleasignacion_id)</th>
-                    <th>@(u.Docente.apellido ),@( u.Docente.nombre)</th>
-                    <th>@(u.Asignacion.titulo)</th>
-                    <th>@(u.Criterio.descripcion)</th>
-                    <th>@(u.estado == "A" ? "Activo" : "Inactivo")</th>
-                    <th style="align-content:center">
-                        <a href="~/DetalleAsignacion/Visualizar/@u.detalleasignacion_id" class="btn btn-xs btn-warning">Visualizar</a>
-                        <a href="~/DetalleAsignacion/AgregarEditar/@u.detalleasignacion_id" class="btn btn-xs btn-primary">Modificar</a>
-                        <a href="~/DetalleAsignacion/Eliminar/@u.detalleasignacion_id" class="btn btn-xs btn-danger" onclick="return confirm('¿Esta Seguro de Eliminar.........?');">Eliminar</a>
-                    </th>
+                    <th style="width:50px">ID  </th>
+                    <th style="width:100px">Docente  </th>
+                    <th style="width:70px">Titulo  </th>
+                    <th style="width:80px">Criterio  </th>
+                    <th style="width:80px">Estado  </th>
+                    <th style="width:200px">Acciones  </th>
                 </tr>
-            }
-        }
-    </tbody>
-</table>
+            </thead>
+            <tbody>
+                @foreach (var u in Model)
+                {
+                    if (u.asignacion_id == Convert.ToInt32(ViewBag.id))
+                    {
+                        <tr>
+                            <td>@(u.detalleasignacion_id)</td>
+                            <td>@(u.Docente.apellido ),@( u.Docente.nombre)</td>
+                            <td>@(u.Asignacion.titulo)</td>
+                            <td>@(u.Criterio.descripcion)</td>
+                            @if (u.estado == "A")
+                            {
+                                <td><span class="badge badge-success">Activo</span></td>
+                            }
+                            else
+                            {
+                                <td><span class="badge badge-danger">Inactivo</span></td>
+                            }
+                            <td style="align-content:center">
+                                <a href="~/DetalleAsignacion/Visualizar/@u.detalleasignacion_id" class="btn btn-xs btn-warning btn-sm">Visualizar</a>
+                                <a href="~/DetalleAsignacion/AgregarEditar/@u.detalleasignacion_id" class="btn btn-xs btn-primary btn-sm">Modificar</a>
+                                <a href="~/DetalleAsignacion/Eliminar/@u.detalleasignacion_id" class="btn btn-xs btn-danger btn-sm" onclick="return confirm('¿Esta Seguro de Eliminar.........?');">Eliminar</a>
+                            </td>
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
