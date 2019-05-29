@@ -6,73 +6,82 @@
     List<Sistema_MVC_Web2.Models.Asignacion> asignacion = ViewBag.Asignacion;
 }
 
-<h2>Agregar / Editar</h2>
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a href="~/DetalleAsignacion/Index">Detalle Asignacion</a>
+        </li>
+        <li class="breadcrumb-item" active>@(Model.detalleasignacion_id > 0 ? Model.Criterio.descripcion : "Nuevo Registro")</li>
+    </ol>
+</nav>
 
-<ol class="breadcrumb">
-    <li><a href="~/DetalleAsignacion">DetalleAsignacion</a></li>
-    <li class="active">@(Model.detalleasignacion_id > 0 ? Model.Criterio.descripcion : "Nuevo Registro")</li>
-</ol>
-@using (Html.BeginForm("Guardar", "DetalleAsignacion", FormMethod.Post, new { id = "frm-detalleasignacion" }))
-{
-    @Html.HiddenFor(x => x.detalleasignacion_id)
-    <div class="panel panel-default">
-        <div class="paneñ-heading">Informacion del DetalleAsignacion</div>
-        <div class="panel-body">
 
-            <div class="form-group">
-                @Html.Label("id:")
-                @Html.TextBoxFor(x => x.detalleasignacion_id, new { @class = "form-control", disabled = true })
+<div class="card">
+    <h5 class="card-header">Agregar / Editar Detalle Asignacion</h5>
+    <div class="card-body">
+
+        @using (Html.BeginForm("Guardar", "DetalleAsignacion", FormMethod.Post, new { id = "frm-detalleasignacion" }))
+        {
+            @Html.HiddenFor(x => x.detalleasignacion_id)
+            <div class="panel panel-default">
+                <div class="paneñ-heading">Informacion del DetalleAsignacion</div>
+                <div class="panel-body">
+
+                    <div class="form-group">
+                        @Html.Label("id:")
+                        @Html.TextBoxFor(x => x.detalleasignacion_id, new { @class = "form-control", disabled = true })
+                    </div>
+                    <div class="form-group">
+                        @Html.Label("Asignacion:")
+                        <select name="asignacion_id" class="form-control">
+                            <option @(Model.asignacion_id.Equals("") ? "selected" : "") value="">-Seleccione-</option>
+                            @foreach (var p in asignacion)
+                            {
+                                <option @(Model.asignacion_id.Equals(p.asignacion_id) ? "selected" : "") value="@p.asignacion_id">@p.titulo</option>
+                            }
+                        </select>
+                        @Html.ValidationMessageFor(x => x.asignacion_id, null, new { @class = "label label-danger" })
+                    </div>
+                    <div class="form-group">
+                        @Html.Label("Docente:")
+                        <select name="docente_id" class="form-control">
+                            <option @(Model.docente_id.Equals("") ? "selected" : "") value="">-Seleccione-</option>
+                            @foreach (var p in docente)
+                            {
+                                <option @(Model.docente_id.Equals(p.docente_id) ? "selected" : "") value="@p.docente_id">@p.apellido, @p.nombre</option>
+                            }
+                        </select>
+                        @Html.ValidationMessageFor(x => x.docente_id, null, new { @class = "label label-danger" })
+                    </div>
+
+                    <div class="form-group">
+                        @Html.Label("Criterio:")
+                        <select name="criterio_id" class="form-control">
+                            <option @(Model.criterio_id.Equals("") ? "selected" : "") value="">-Seleccione-</option>
+                            @foreach (var p in criterio)
+                            {
+                                <option @(Model.criterio_id.Equals(p.criterio_id) ? "selected" : "") value="@p.criterio_id">@p.nombre_spanish, @p.nombre_english</option>
+                            }
+                        </select>
+                        @Html.ValidationMessageFor(x => x.criterio_id, null, new { @class = "label label-danger" })
+                    </div>
+
+                    <div class="form-group">
+                        @Html.Label("Estado:")
+                        <br />
+                        @Html.RadioButtonFor(x => x.estado, "A")<span> Activo</span>
+                        @Html.RadioButtonFor(x => x.estado, "I")<span> Inactivo</span>
+                        @Html.ValidationMessageFor(x => x.estado, null, new { @class = "label label-danger" })
+                    </div>
+                    <div class="text-right">
+                        <button type="submit" class="btn btn-primary">Grabar</button>
+                        <a href="~/DetalleAsignacion" class="btn btn-danger">Cancelar</a>
+                    </div>
+                </div>
             </div>
-            <div class="form-group">
-                @Html.Label("Asignacion:")
-                <select name="asignacion_id" class="form-control">
-                    <option @(Model.asignacion_id.Equals("") ? "selected" : "") value="">-Seleccione-</option>
-                    @foreach (var p in asignacion)
-                    {
-                        <option @(Model.asignacion_id.Equals(p.asignacion_id) ? "selected" : "") value="@p.asignacion_id">@p.titulo</option>
-                    }
-                </select>
-                @Html.ValidationMessageFor(x => x.asignacion_id, null, new { @class = "label label-danger" })
-            </div>
-            <div class="form-group">
-                @Html.Label("Docente:")
-                <select name="docente_id" class="form-control">
-                    <option @(Model.docente_id.Equals("") ? "selected" : "") value="">-Seleccione-</option>
-                    @foreach (var p in docente)
-                    {
-                        <option @(Model.docente_id.Equals(p.docente_id) ? "selected" : "") value="@p.docente_id">@p.apellido, @p.nombre</option>
-                    }
-                </select>
-                @Html.ValidationMessageFor(x => x.docente_id, null, new { @class = "label label-danger" })
-            </div>
-
-            <div class="form-group">
-                @Html.Label("Criterio:")
-                <select name="criterio_id" class="form-control">
-                    <option @(Model.criterio_id.Equals("") ? "selected" : "") value="">-Seleccione-</option>
-                    @foreach (var p in criterio)
-                    {
-                        <option @(Model.criterio_id.Equals(p.criterio_id) ? "selected" : "") value="@p.criterio_id">@p.nombre_spanish, @p.nombre_english</option>
-                    }
-                </select>
-                @Html.ValidationMessageFor(x => x.criterio_id, null, new { @class = "label label-danger" })
-            </div>
-
-
-
-
-
-            <div class="form-group">
-                @Html.Label("Estado:")
-                <br />
-                @Html.RadioButtonFor(x => x.estado, "A")<span> Activo</span>
-                @Html.RadioButtonFor(x => x.estado, "I")<span> Inactivo</span>
-                @Html.ValidationMessageFor(x => x.estado, null, new { @class = "label label-danger" })
-            </div>
-        </div>
+            
+        }
     </div>
-    <div class="text-right">
-        <button type="submit" class="btn btn-primary">Grabar</button>
-        <a href="~/DetalleAsignacion" class="btn btn-danger">Cancelar</a>
-    </div>
-}
+</div>
+
+
