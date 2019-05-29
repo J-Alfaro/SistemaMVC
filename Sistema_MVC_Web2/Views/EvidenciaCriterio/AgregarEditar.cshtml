@@ -1,67 +1,71 @@
 ﻿@model Sistema_MVC_Web2.Models.EvidenciaCriterio
 @{
-    List<Sistema_MVC_Web2.Models.Criterio> criterio = ViewBag.Criterio;
-}
 
-@{
-    ViewBag.Title = "AgregarEditar";
+
+    List<Sistema_MVC_Web2.Models.Criterio> criterio = ViewBag.Criterio;
+
 }
 
 <h2>Agregar / Editar</h2>
 
-<nav aria-label="breadcrumb">
-    <ol class="breadcrumb">
-        <li class="breadcrumb-item">
-            <a href="~/EvidenciaCriterio/Index">Evidencia Criterio</a>
-        </li>
-        <li class="breadcrumb-item" active>
-       
-    </ol>
-
-</nav>
-
-@using (Html.BeginForm("Guardar", "EvidenciaCriterio", FormMethod.Post, new { id = "frm-usuario" }))
+<ol class="breadcrumb">
+    <li><a href="~/ControlAsignacion">ControlAsignacion</a></li>
+    
+</ol>
+@using (Html.BeginForm("Guardar", "EvidenciaCriterio", FormMethod.Post, new { id = "frm-controlasignacion" }))
 {
     @Html.HiddenFor(x => x.evidencia_id)
-    <div class="card">
-        <div class="card-header">Informacion de Usuario</div>
-        <div class="card-body">
-            <div class="form-group">
-                @Html.Label("Id")
-                @Html.TextBoxFor(x => x.evidencia_id, new { @class = "form-control", disabled = true })
+    <div class="panel panel-default">
+        <div class="paneñ-heading">Informacion del ControlAsignacion</div>
+        <div class="panel-body">
 
+            <div class="form-group">
+                @Html.Label("id:")
+                @Html.TextBoxFor(x => x.evidencia_id, new { @class = "form-control", disabled = true })
             </div>
 
+
             <div class="form-group">
-                <select name="Codigo_Profesion" class="form-control">
-                    <option value=""> -- Seleccione --</option>
-                    @foreach (var d in criterio)
+                @Html.Label("Criterio:")
+                <select name="criterio_id" class="form-control">
+                    <option @(Model.criterio_id.Equals("") ? "selected" : "") value="">-Seleccione-</option>
+                    @foreach (var p in criterio)
                     {
-                        <option @(Model.criterio_id.Equals(d.criterio_id)) value="@d.criterio_id">@d.nombre_spanish</option>
+                        <option @(Model.criterio_id.Equals(p.criterio_id) ? "selected" : "") value="@p.criterio_id">@p.nombre_spanish</option>
                     }
                 </select>
+                @Html.ValidationMessageFor(x => x.criterio_id, null, new { @class = "label label-danger" })
             </div>
-
-     
 
 
             <div class="form-group">
-                @Html.Label("Avatar")
-                @if (Model.evidencia_id > 0)
-                {
-                    <img src="~/Imagenes/@Model.archivo" height="80" width="80" />
-                    @Html.HiddenFor(x => x.archivo)
-                }
-                <input type="file" name="file" />
+                @Html.Label(" Archivo:")
+                @Html.TextBoxFor(x => x.archivo, new { @class = "form-control" })
+                @Html.ValidationMessageFor(x => x.archivo, null, new { @class = "label label-danger" })
+            </div>
+            <div class="form-group">
+                @Html.Label(" Tamaño:")
+                @Html.TextBoxFor(x => x.tamanio, new { @class = "form-control" })
+               
             </div>
 
 
-        </div>
+            <div class="form-group">
+                @Html.Label(" Tipo:")
+                @Html.TextBoxFor(x => x.tipo, new { @class = "form-control" })
+                
+            </div>
 
+            <div class="form-group">
+                @Html.Label(" DEscripcion:")
+                @Html.TextBoxFor(x => x.descripcion, new { @class = "form-control" })
+              
+            </div>
+
+        </div>
     </div>
-    <br />
     <div class="text-right">
         <button type="submit" class="btn btn-primary">Grabar</button>
-        <a href="~/Usuario" class="btn btn-danger">Cancelar</a>
+        <a href="~/EvidenciaCriterio" class="btn btn-danger">Cancelar</a>
     </div>
 }

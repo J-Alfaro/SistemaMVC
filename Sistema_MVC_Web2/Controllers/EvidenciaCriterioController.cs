@@ -33,7 +33,7 @@ namespace Sistema_MVC_Web2.Controllers
 
         public ActionResult AgregarEditar(int id = 0)
         {
-            ViewBag.Criterio = objCriterio.Listar();
+            ViewBag.criterio = objCriterio.Listar();
             return View(
                 id == 0 ? new EvidenciaCriterio() // Agregar un nuevo objeto
                 : objEvidenciaCriterio.Obtener(id)
@@ -52,12 +52,12 @@ namespace Sistema_MVC_Web2.Controllers
 
                     file.SaveAs(Server.MapPath("~/Imagenes/" + file.FileName));
 
-                    objEvidenciaCriterio.archivo= file.FileName;
-                    objEvidenciaCriterio.tamanio = "12";
-                    objEvidenciaCriterio.tipo = "aas";
-                    objEvidenciaCriterio.descripcion = "asdas";
+                    objEvidenciaCriterio.archivo = file.FileName;
+                    objEvidenciaCriterio.tamanio = Path.GetExtension(file.FileName);
+                    objEvidenciaCriterio.tipo = Path.GetExtension(file.FileName);
                 }
-                objCriterio.Guardar();
+
+                objEvidenciaCriterio.Guardar();
                 return Redirect("~/EvidenciaCriterio");
             }
             else
@@ -72,7 +72,7 @@ namespace Sistema_MVC_Web2.Controllers
         {
             objEvidenciaCriterio.evidencia_id = id;
             objEvidenciaCriterio.Eliminar();
-            return Redirect("~/Usuario");
+            return Redirect("~/EvidenciaCriterio");
         }
     }
 }

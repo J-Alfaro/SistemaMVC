@@ -41,30 +41,30 @@ namespace Sistema_MVC_Web2.Models
         //Metodo listar
         public List<EvidenciaCriterio> Listar()//Retorna una coleccion de registros
         {
-            var objUsuario = new List<EvidenciaCriterio>();
+            var objEvidenciaCriterio= new List<EvidenciaCriterio>();
             try
             {
                 using (var db = new Modelo_Sistemas())
                 {
-                    objUsuario = db.EvidenciaCriterio.Include("Criterio").ToList();
+                    objEvidenciaCriterio = db.EvidenciaCriterio.Include("Criterio").ToList();
                 }
             }
             catch (Exception ex)
             {
                 throw;
             }
-            return objUsuario;
+            return objEvidenciaCriterio;
         }
 
         //Metodo obtener
         public EvidenciaCriterio Obtener(int id)//retorna solo un objeto
         {
-            var objUsuario = new EvidenciaCriterio();
+            var objEvidenciaCriterio = new EvidenciaCriterio();
             try
             {
                 using (var db = new Modelo_Sistemas())
                 {
-                    objUsuario = db.EvidenciaCriterio.Include("Criterio")
+                    objEvidenciaCriterio = db.EvidenciaCriterio.Include("Criterio")
                         .Where(x => x.evidencia_id == id)
                         .SingleOrDefault();
                 }
@@ -73,7 +73,7 @@ namespace Sistema_MVC_Web2.Models
             {
                 throw;
             }
-            return objUsuario;
+            return objEvidenciaCriterio;
         }
 
         //Metodo guardar
