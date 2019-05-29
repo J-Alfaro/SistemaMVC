@@ -1,0 +1,41 @@
+﻿@model Sistema_MVC_Web2.Models.EvidenciaActividad
+@{
+    ViewBag.Title = "Visualizar";
+}
+
+<h2>Visualizar</h2>
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a href="~/EvidenciaActividad/Index">Evidencia</a>
+        </li>
+        <li class="breadcrumb-item" active>@Model.descripcion</li>
+
+    </ol>
+</nav>
+
+<div class="card">
+    <div class="card-header">
+        Informacion detallada del Evidencia Actividad
+
+    </div>
+    <div class="card-body">
+        <dl class="dl-horizontal">
+            <dt>Id</dt>
+            <dd>@Model.evidenciaactividad_id</dd>
+            <dt>Actividad</dt>
+            <dd>@Model.Actividad.nombre</dd>
+            <dt>Archivo </dt>
+            <dd>@Model.archivo</dd>
+            <dt>Tamaño</dt>
+            <dd>@Model.tamanio</dd>
+            <dt>Tipo</dt>
+            <dd>@Model.tipo</dd>
+            <dt>Descripcion</dt>
+            <dd>@Model.descripcion</dd>
+
+        </dl>
+
+    </div>
+
+</div>

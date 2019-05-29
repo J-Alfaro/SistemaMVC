@@ -1,0 +1,82 @@
+﻿@model Sistema_MVC_Web2.Models.EvidenciaActividad
+@{
+
+    List<Sistema_MVC_Web2.Models.Actividad> actividad = ViewBag.Actividad;
+}
+
+<h2>Agregar | Editar</h2>
+
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a href="~/EvidenciaActividad/Index">Evidencia Actividad</a>
+        </li>
+        <li class="breadcrumb-item" active>
+
+            @(Model.evidenciaactividad_id > 0 ? Model.descripcion : "Nuevo Registro")
+        </li>
+
+    </ol>
+</nav>
+
+@using (Html.BeginForm("Guardar", "EvidenciaActividad", FormMethod.Post, new { id = "frm-evidencia" }))
+{
+    @Html.HiddenFor(x => x.evidenciaactividad_id)
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            Informacion de Evidencia actividad
+        </div>
+        <div class="panel-body">
+            <div class="form-group">
+                @Html.Label("Actividad:")
+                <select name="actividad_id" class="form-control">
+                    <option @(Model.actividad_id.Equals("") ? "selected" : "") value="">-Seleccione-</option>
+                    @foreach (var a in actividad)
+                    {
+                        <option @(Model.actividad_id.Equals(a.actividad_id) ? "selected" : "") value="@a.actividad_id"> @a.nombre</option>
+                    }
+                </select>
+                @Html.ValidationMessageFor(x => x.actividad_id, null, new { @class = "label label-danger" })
+            </div>
+
+            <div class="form-group">
+                @Html.Label("Archivo")
+                @if (Model.evidenciaactividad_id > 0)
+                {
+                    <img src="~/Imagenes/" height="80" width="80" />
+                    @Html.HiddenFor(x => x.archivo)
+                }
+                <input type="file" class="btn btn-default btn-file" name="file" />
+            </div>
+
+            @*<div class="form-group">
+                    @Html.Label("Tamaño:")
+                    @Html.TextBoxFor(x => x.tamanio, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(x => x.tamanio, null, new { @class = "label label-danger" })
+                </div>
+
+                <div class="form-group">
+                    <select name="tipo" class="form-control">
+                        <option @(Model.tipo == "" ? "Selected" : "") value="">-Seleccionar-</option>
+                        <option @(Model.tipo == "pdf" ? "Selected" : "") value="pdf">pdf</option>
+                        <option @(Model.tipo == "doc" ? "Selected" : "") value="doc">doc</option>
+                        <option @(Model.tipo == "txt" ? "Selected" : "") value="txt">txt</option>
+                        <option @(Model.tipo == "xlsx" ? "Selected" : "") value="xlsx">xlsx</option>
+                        <option @(Model.tipo == "pptx" ? "Selected" : "") value="pptx">pptx</option>
+                    </select>
+                    @Html.ValidationMessageFor(x => x.tipo, null, new { @class = "label label-danger" })
+                </div>*@
+
+            <div class="form-group">
+                @Html.Label("Descripcion:")
+                @Html.TextBoxFor(x => x.descripcion, new { @class = "form-control" })
+                @Html.ValidationMessageFor(x => x.descripcion, null, new { @class = "label label-danger" })
+            </div>
+
+        </div>
+    </div>
+    <div class="text-right">
+        <button type="submit" class="btn btn-primary">Guardar</button>
+        <a href="~/EvidenciaActividad" class="btn btn-danger">Cancelar</a>
+    </div>
+}   
