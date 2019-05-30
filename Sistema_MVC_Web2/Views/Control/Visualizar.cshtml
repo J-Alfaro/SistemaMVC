@@ -1,0 +1,43 @@
+﻿@model  Sistema_MVC_Web2.Models.Control
+@{
+    ViewBag.Title = "Visualizar";
+}
+
+<h2>Visualizar</h2>
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a href="~/Control/Index">Control</a>
+        </li>
+        <li class="breadcrumb-item" active>@Model.titulo</li>
+    </ol>
+</nav>
+
+<div class="card">
+    <h5 class="card-header">
+        Informacion detallada del control
+
+    </h5>
+    <div class="card-body">
+        <dl class="dl-horizontal">
+            <dt>Id</dt>
+            <dd>@Model.control_id</dd>
+
+            <dt>ID Semestre</dt>
+            <dd>@Model.semestre_id</dd>
+
+            <dt>Titulo</dt>
+            <dd>@Model.titulo</dd>
+
+            <dt>Fecha Creacion</dt>
+            <dd>@Model.fechacreacion</dd>
+
+            <dt>Estado</dt>
+            <dd>@(Model.estado == "A" ? "Activo" : "Inactivo")</dd>
+
+        </dl>
+    </div>
+</div>
+<div id="vista2">
+    @{Html.RenderAction("DetalleControl", "Control", new ViewDataDictionary(new { id = Model.control_id })); }
+</div>

@@ -172,6 +172,7 @@
     <Compile Include="Controllers\ActividadController.cs" />
     <Compile Include="Controllers\AsignacionController.cs" />
     <Compile Include="Controllers\ControlAsignacionController.cs" />
+    <Compile Include="Controllers\ControlController.cs" />
     <Compile Include="Controllers\CriterioController.cs" />
     <Compile Include="Controllers\DetalleAsignacionController.cs" />
     <Compile Include="Controllers\DocenteController.cs" />
@@ -249,6 +250,10 @@
     <Content Include="Views\EvidenciaCriterio\AgregarEditar.cshtml" />
     <Content Include="Views\Actividad\AgregarEditar.cshtml" />
     <Content Include="Views\Actividad\Visualizar.cshtml" />
+    <Content Include="Views\Control\Index.cshtml" />
+    <Content Include="Views\Control\Visualizar.cshtml" />
+    <Content Include="Views\Control\AgregarEditar.cshtml" />
+    <Content Include="Views\Control\DetalleControl.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

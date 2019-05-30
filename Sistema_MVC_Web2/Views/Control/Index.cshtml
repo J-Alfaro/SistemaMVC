@@ -1,0 +1,53 @@
+﻿@model List<Sistema_MVC_Web2.Models.Control>
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="card">
+    <h5 class="card-header">Lista de Control</h5>
+    <div class="card-body">
+        <div class="text-right">
+            <a href="~/Control/AgregarEditar/" class="btn btn-primary text-right">
+                Nuevo registro
+            </a>
+        </div>
+        <br />
+
+        <table id="example" class="table table-hover">
+            <thead>
+                <tr>
+                    <th>ID  </th>
+                    <th>ID semestre  </th>
+                    <th>Titulo  </th>
+                    <th>Fecha Creacion  </th>
+                    <th style="width:250px">Estado  </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var s in Model)
+                {
+                    <tr>
+                        <td>@(s.control_id)</td>
+                        <td>@(s.semestre_id)</td>
+                        <td>@(s.titulo)</td>
+                        <td>@(s.fechacreacion)</td>
+                        @if (s.estado == "A")
+                        {
+                            <td><span class="badge badge-success">Activo</span></td>
+                        }
+                        else
+                        {
+                            <td><span class="badge badge-danger">Inactivo</span></td>
+                        }
+                        <td style="align-content:center">
+                            <a href="~/Control/Visualizar/@s.control_id" class="btn btn-xs btn-warning btn-sm">Visualizar</a>
+                            <a href="~/Control/AgregarEditar/@s.control_id" class="btn btn-xs btn-primary btn-sm">Modificar</a>
+                            <a href="~/Control/Eliminar/@s.control_id" class="btn btn-xs btn-danger btn-sm" onclick="return confirm('¿Esta Seguro de Eliminar.........?');">Eliminar</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+    </div>
+</div>
