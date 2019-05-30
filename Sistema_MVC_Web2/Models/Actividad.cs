@@ -47,6 +47,8 @@ namespace Sistema_MVC_Web2.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<EvidenciaActividad> EvidenciaActividad { get; set; }
 
+
+
         public List<Actividad> Listar()//Retorna una coleccion de registros
         {
             var objActividad = new List<Actividad>();
@@ -126,6 +128,7 @@ namespace Sistema_MVC_Web2.Models
                     db.Entry(this).State = EntityState.Deleted;
                     db.SaveChanges();
                 }
+
             }
             catch (Exception ex)
             {

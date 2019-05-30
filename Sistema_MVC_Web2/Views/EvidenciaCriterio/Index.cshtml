@@ -1,0 +1,49 @@
+﻿@model List<Sistema_MVC_Web2.Models.EvidenciaCriterio>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2 class="card" text-center>Gestion de EvidenciaCriterios</h2>
+
+<br />
+<div class="text-right">
+    <a href="~/EvidenciaCriterio/AgregarEditar/" class="btn btn-secondary text-right">Nuevo Registro</a>
+</div>
+<br />
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th style="width:50px">Id</th>
+            <th style="width:100px">EvidenciaCriterio</th>
+            <th style="width:70px">archivo</th>
+            <th style="width:80px">tamanio</th>
+            <th style="width:80px">tipo</th>
+            <th style="width:80px">descripcion</th>
+            <th style="width:200px">Acciones</th>
+
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var s in Model)
+        {
+            <tr>
+                <th>@(s.evidencia_id)</th>
+                <th>@(s.Criterio.nombre_spanish)</th>
+                <th>@(s.archivo)</th>
+                <th>@(s.tamanio)</th>
+                <th>@(s.tipo)</th>
+                <th>@(s.descripcion)</th>
+                <th style="text-align:center;">
+                    <a href="~/EvidenciaCriterio/Visualizar/@s.evidencia_id" class="btn btn-xs btn-warning">Visualizar</a>
+                    <a href="~/EvidenciaCriterio/AgregarEditar/@s.evidencia_id" class="btn btn-xs btn-primary">Modificar</a>
+                    <a href="~/EvidenciaCriterio/Eliminar/@s.evidencia_id" class="btn btn-xs btn-danger" onclick="return confirm('¿Estas seguro qu desea eliminar?');">Eliminar</a>
+                </th>
+            </tr>
+        }
+    </tbody>
+</table>
+

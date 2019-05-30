@@ -1,7 +1,56 @@
-﻿
+﻿@model List<Sistema_MVC_Web2.Models.Actividad>
 @{
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2 class="card" text-center>Gestion de Actividad</h2>
+<br />
+<div class="text-right">
+    <a href="~/Actividad/AgregarEditar/" class="btn btn-secondary text-right">
+        Nuevo registro
+    </a>
+</div>
+<br />
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th style="width:50px">ID  </th>
+            <th style="width:100px">Semestre  </th>
+            
+            <th style="width:80px">Criterio  </th>
+            <th style="width:80px">Nombre Actividad </th>
+            <th style="width:80px">Descripcion </th>
+            <th style="width:80px">Fecha  </th>
+            <th style="width:80px">urlactividad  </th>
+          
+            <th style="width:80px">Estado  </th>
+            <th style="width:200px">Acciones  </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var u in Model)
+        {
+            <tr>
+                <th>@(u.actividad_id)</th>
+                <th>@(u.Semestre.nombre)</th>
+            
+                <th>@(u.Criterio.nombre_spanish)</th>
+                <th>@(u.nombre)</th>
+                <th>@(u.descripcion)</th>
+                <th>@(u.fecha)</th>
+                <th>@(u.urlactividad)</th>
+          
+
+                <th>@(u.estado == "A" ? "Activo" : "Inactivo")</th>
+                <th style="align-content:center">
+                    <a href="~/Actividad/Visualizar/@u.actividad_id" class="btn btn-xs btn-warning">Visualizar</a>
+                    <a href="~/Actividad/AgregarEditar/@u.actividad_id" class="btn btn-xs btn-primary">Modificar</a>
+                    <a href="~/Actividad/Eliminar/@u.actividad_id" class="btn btn-xs btn-danger" onclick="return confirm('¿Esta Seguro de Eliminar.........?');">Eliminar</a>
+                </th>
+            </tr>
+        }
+    </tbody>
+</table>
 

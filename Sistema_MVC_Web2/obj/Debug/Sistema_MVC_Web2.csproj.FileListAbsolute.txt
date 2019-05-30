@@ -170,6 +170,6 @@ C:\Users\Samuel\Source\Repos\SistemaMVC\Sistema_MVC_Web2\bin\es\System.Web.Webpa
 C:\Users\Samuel\Source\Repos\SistemaMVC\Sistema_MVC_Web2\bin\es\System.Web.Webpages.Razor.resources.dll
 C:\Users\Samuel\Source\Repos\SistemaMVC\Sistema_MVC_Web2\bin\es\System.Web.Helpers.resources.dll
 C:\Users\Samuel\Source\Repos\SistemaMVC\Sistema_MVC_Web2\bin\es\System.Web.Mvc.resources.dll
+C:\Users\Samuel\Source\Repos\SistemaMVC\Sistema_MVC_Web2\obj\Debug\Sistema_MVC_Web2.csprojResolveAssemblyReference.cache
 C:\Users\Samuel\Source\Repos\SistemaMVC\Sistema_MVC_Web2\obj\Debug\Sistema_MVC_Web2.dll
 C:\Users\Samuel\Source\Repos\SistemaMVC\Sistema_MVC_Web2\obj\Debug\Sistema_MVC_Web2.pdb
-C:\Users\Samuel\Source\Repos\SistemaMVC\Sistema_MVC_Web2\obj\Debug\Sistema_MVC_Web2.csprojResolveAssemblyReference.cache
