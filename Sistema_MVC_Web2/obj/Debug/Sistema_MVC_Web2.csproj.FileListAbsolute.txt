@@ -351,60 +351,63 @@ D:\Proyecto MVC Vs 4.0\SistemaMVC\Sistema_MVC_Web2\obj\Debug\Sistema_MVC_Web2.cs
 D:\Proyecto MVC Vs 4.0\SistemaMVC\Sistema_MVC_Web2\obj\Debug\Sistema_MVC_Web2.csproj.CopyComplete
 D:\Proyecto MVC Vs 4.0\SistemaMVC\Sistema_MVC_Web2\obj\Debug\Sistema_MVC_Web2.dll
 D:\Proyecto MVC Vs 4.0\SistemaMVC\Sistema_MVC_Web2\obj\Debug\Sistema_MVC_Web2.pdb
-C:\Users\Samuel\Source\Repos\SistemaMVC\Sistema_MVC_Web2\bin\Sistema_MVC_Web2.dll.config
-C:\Users\Samuel\Source\Repos\SistemaMVC\Sistema_MVC_Web2\bin\Sistema_MVC_Web2.dll
-C:\Users\Samuel\Source\Repos\SistemaMVC\Sistema_MVC_Web2\bin\Sistema_MVC_Web2.pdb
-C:\Users\Samuel\Source\Repos\SistemaMVC\Sistema_MVC_Web2\bin\roslyn\csc.exe
-C:\Users\Samuel\Source\Repos\SistemaMVC\Sistema_MVC_Web2\bin\roslyn\csc.exe.config
-C:\Users\Samuel\Source\Repos\SistemaMVC\Sistema_MVC_Web2\bin\roslyn\csc.rsp
-C:\Users\Samuel\Source\Repos\SistemaMVC\Sistema_MVC_Web2\bin\roslyn\csi.exe
-C:\Users\Samuel\Source\Repos\SistemaMVC\Sistema_MVC_Web2\bin\roslyn\csi.rsp
-C:\Users\Samuel\Source\Repos\SistemaMVC\Sistema_MVC_Web2\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
-C:\Users\Samuel\Source\Repos\SistemaMVC\Sistema_MVC_Web2\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
-C:\Users\Samuel\Source\Repos\SistemaMVC\Sistema_MVC_Web2\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
-C:\Users\Samuel\Source\Repos\SistemaMVC\Sistema_MVC_Web2\bin\roslyn\Microsoft.CodeAnalysis.dll
-C:\Users\Samuel\Source\Repos\SistemaMVC\Sistema_MVC_Web2\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
-C:\Users\Samuel\Source\Repos\SistemaMVC\Sistema_MVC_Web2\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
-C:\Users\Samuel\Source\Repos\SistemaMVC\Sistema_MVC_Web2\bin\roslyn\Microsoft.CSharp.Core.targets
-C:\Users\Samuel\Source\Repos\SistemaMVC\Sistema_MVC_Web2\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
-C:\Users\Samuel\Source\Repos\SistemaMVC\Sistema_MVC_Web2\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
-C:\Users\Samuel\Source\Repos\SistemaMVC\Sistema_MVC_Web2\bin\roslyn\Microsoft.VisualBasic.Core.targets
-C:\Users\Samuel\Source\Repos\SistemaMVC\Sistema_MVC_Web2\bin\roslyn\System.AppContext.dll
-C:\Users\Samuel\Source\Repos\SistemaMVC\Sistema_MVC_Web2\bin\roslyn\System.Collections.Immutable.dll
-C:\Users\Samuel\Source\Repos\SistemaMVC\Sistema_MVC_Web2\bin\roslyn\System.Diagnostics.StackTrace.dll
-C:\Users\Samuel\Source\Repos\SistemaMVC\Sistema_MVC_Web2\bin\roslyn\System.IO.FileSystem.dll
-C:\Users\Samuel\Source\Repos\SistemaMVC\Sistema_MVC_Web2\bin\roslyn\System.IO.FileSystem.Primitives.dll
-C:\Users\Samuel\Source\Repos\SistemaMVC\Sistema_MVC_Web2\bin\roslyn\System.Reflection.Metadata.dll
-C:\Users\Samuel\Source\Repos\SistemaMVC\Sistema_MVC_Web2\bin\roslyn\vbc.exe
-C:\Users\Samuel\Source\Repos\SistemaMVC\Sistema_MVC_Web2\bin\roslyn\vbc.exe.config
-C:\Users\Samuel\Source\Repos\SistemaMVC\Sistema_MVC_Web2\bin\roslyn\vbc.rsp
-C:\Users\Samuel\Source\Repos\SistemaMVC\Sistema_MVC_Web2\bin\roslyn\VBCSCompiler.exe
-C:\Users\Samuel\Source\Repos\SistemaMVC\Sistema_MVC_Web2\bin\roslyn\VBCSCompiler.exe.config
-C:\Users\Samuel\Source\Repos\SistemaMVC\Sistema_MVC_Web2\bin\EntityFramework.dll
-C:\Users\Samuel\Source\Repos\SistemaMVC\Sistema_MVC_Web2\bin\EntityFramework.SqlServer.dll
-C:\Users\Samuel\Source\Repos\SistemaMVC\Sistema_MVC_Web2\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
-C:\Users\Samuel\Source\Repos\SistemaMVC\Sistema_MVC_Web2\bin\Microsoft.Web.Infrastructure.dll
-C:\Users\Samuel\Source\Repos\SistemaMVC\Sistema_MVC_Web2\bin\System.Web.Helpers.dll
-C:\Users\Samuel\Source\Repos\SistemaMVC\Sistema_MVC_Web2\bin\System.Web.Mvc.dll
-C:\Users\Samuel\Source\Repos\SistemaMVC\Sistema_MVC_Web2\bin\System.Web.Razor.dll
-C:\Users\Samuel\Source\Repos\SistemaMVC\Sistema_MVC_Web2\bin\System.Web.Webpages.Deployment.dll
-C:\Users\Samuel\Source\Repos\SistemaMVC\Sistema_MVC_Web2\bin\System.Web.Webpages.dll
-C:\Users\Samuel\Source\Repos\SistemaMVC\Sistema_MVC_Web2\bin\System.Web.Webpages.Razor.dll
-C:\Users\Samuel\Source\Repos\SistemaMVC\Sistema_MVC_Web2\bin\EntityFramework.xml
-C:\Users\Samuel\Source\Repos\SistemaMVC\Sistema_MVC_Web2\bin\EntityFramework.SqlServer.xml
-C:\Users\Samuel\Source\Repos\SistemaMVC\Sistema_MVC_Web2\bin\System.Web.Razor.xml
-C:\Users\Samuel\Source\Repos\SistemaMVC\Sistema_MVC_Web2\bin\System.Web.Webpages.xml
-C:\Users\Samuel\Source\Repos\SistemaMVC\Sistema_MVC_Web2\bin\System.Web.Webpages.Deployment.xml
-C:\Users\Samuel\Source\Repos\SistemaMVC\Sistema_MVC_Web2\bin\System.Web.Webpages.Razor.xml
-C:\Users\Samuel\Source\Repos\SistemaMVC\Sistema_MVC_Web2\bin\System.Web.Helpers.xml
-C:\Users\Samuel\Source\Repos\SistemaMVC\Sistema_MVC_Web2\bin\System.Web.Mvc.xml
-C:\Users\Samuel\Source\Repos\SistemaMVC\Sistema_MVC_Web2\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\Samuel\Source\Repos\SistemaMVC\Sistema_MVC_Web2\bin\es\System.Web.Razor.resources.dll
-C:\Users\Samuel\Source\Repos\SistemaMVC\Sistema_MVC_Web2\bin\es\System.Web.Webpages.resources.dll
-C:\Users\Samuel\Source\Repos\SistemaMVC\Sistema_MVC_Web2\bin\es\System.Web.Webpages.Deployment.resources.dll
-C:\Users\Samuel\Source\Repos\SistemaMVC\Sistema_MVC_Web2\bin\es\System.Web.Webpages.Razor.resources.dll
-C:\Users\Samuel\Source\Repos\SistemaMVC\Sistema_MVC_Web2\bin\es\System.Web.Helpers.resources.dll
-C:\Users\Samuel\Source\Repos\SistemaMVC\Sistema_MVC_Web2\bin\es\System.Web.Mvc.resources.dll
-C:\Users\Samuel\Source\Repos\SistemaMVC\Sistema_MVC_Web2\obj\Debug\Sistema_MVC_Web2.csprojResolveAssemblyReference.cache
-C:\Users\Samuel\Source\Repos\SistemaMVC\Sistema_MVC_Web2\obj\Debug\Sistema_MVC_Web2.dll
-C:\Users\Samuel\Source\Repos\SistemaMVC\Sistema_MVC_Web2\obj\Debug\Sistema_MVC_Web2.pdb
+D:\Proyecto MVC Vs 4.0\SistemaMVC\Sistema_MVC_Web2\obj\Debug\Sistema_MVC_Web2.csprojAssemblyReference.cache
+D:\Proyecto MVC Vs 5.0\SistemaMVC\Sistema_MVC_Web2\bin\Sistema_MVC_Web2.dll.config
+D:\Proyecto MVC Vs 5.0\SistemaMVC\Sistema_MVC_Web2\bin\Sistema_MVC_Web2.dll
+D:\Proyecto MVC Vs 5.0\SistemaMVC\Sistema_MVC_Web2\bin\Sistema_MVC_Web2.pdb
+D:\Proyecto MVC Vs 5.0\SistemaMVC\Sistema_MVC_Web2\bin\roslyn\csc.exe
+D:\Proyecto MVC Vs 5.0\SistemaMVC\Sistema_MVC_Web2\bin\roslyn\csc.exe.config
+D:\Proyecto MVC Vs 5.0\SistemaMVC\Sistema_MVC_Web2\bin\roslyn\csc.rsp
+D:\Proyecto MVC Vs 5.0\SistemaMVC\Sistema_MVC_Web2\bin\roslyn\csi.exe
+D:\Proyecto MVC Vs 5.0\SistemaMVC\Sistema_MVC_Web2\bin\roslyn\csi.rsp
+D:\Proyecto MVC Vs 5.0\SistemaMVC\Sistema_MVC_Web2\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Proyecto MVC Vs 5.0\SistemaMVC\Sistema_MVC_Web2\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Proyecto MVC Vs 5.0\SistemaMVC\Sistema_MVC_Web2\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\Proyecto MVC Vs 5.0\SistemaMVC\Sistema_MVC_Web2\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\Proyecto MVC Vs 5.0\SistemaMVC\Sistema_MVC_Web2\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\Proyecto MVC Vs 5.0\SistemaMVC\Sistema_MVC_Web2\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Proyecto MVC Vs 5.0\SistemaMVC\Sistema_MVC_Web2\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\Proyecto MVC Vs 5.0\SistemaMVC\Sistema_MVC_Web2\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\Proyecto MVC Vs 5.0\SistemaMVC\Sistema_MVC_Web2\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\Proyecto MVC Vs 5.0\SistemaMVC\Sistema_MVC_Web2\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\Proyecto MVC Vs 5.0\SistemaMVC\Sistema_MVC_Web2\bin\roslyn\System.AppContext.dll
+D:\Proyecto MVC Vs 5.0\SistemaMVC\Sistema_MVC_Web2\bin\roslyn\System.Collections.Immutable.dll
+D:\Proyecto MVC Vs 5.0\SistemaMVC\Sistema_MVC_Web2\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\Proyecto MVC Vs 5.0\SistemaMVC\Sistema_MVC_Web2\bin\roslyn\System.IO.FileSystem.dll
+D:\Proyecto MVC Vs 5.0\SistemaMVC\Sistema_MVC_Web2\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\Proyecto MVC Vs 5.0\SistemaMVC\Sistema_MVC_Web2\bin\roslyn\System.Reflection.Metadata.dll
+D:\Proyecto MVC Vs 5.0\SistemaMVC\Sistema_MVC_Web2\bin\roslyn\vbc.exe
+D:\Proyecto MVC Vs 5.0\SistemaMVC\Sistema_MVC_Web2\bin\roslyn\vbc.exe.config
+D:\Proyecto MVC Vs 5.0\SistemaMVC\Sistema_MVC_Web2\bin\roslyn\vbc.rsp
+D:\Proyecto MVC Vs 5.0\SistemaMVC\Sistema_MVC_Web2\bin\roslyn\VBCSCompiler.exe
+D:\Proyecto MVC Vs 5.0\SistemaMVC\Sistema_MVC_Web2\bin\roslyn\VBCSCompiler.exe.config
+D:\Proyecto MVC Vs 5.0\SistemaMVC\Sistema_MVC_Web2\bin\EntityFramework.dll
+D:\Proyecto MVC Vs 5.0\SistemaMVC\Sistema_MVC_Web2\bin\EntityFramework.SqlServer.dll
+D:\Proyecto MVC Vs 5.0\SistemaMVC\Sistema_MVC_Web2\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Proyecto MVC Vs 5.0\SistemaMVC\Sistema_MVC_Web2\bin\Microsoft.Web.Infrastructure.dll
+D:\Proyecto MVC Vs 5.0\SistemaMVC\Sistema_MVC_Web2\bin\System.Web.Helpers.dll
+D:\Proyecto MVC Vs 5.0\SistemaMVC\Sistema_MVC_Web2\bin\System.Web.Mvc.dll
+D:\Proyecto MVC Vs 5.0\SistemaMVC\Sistema_MVC_Web2\bin\System.Web.Razor.dll
+D:\Proyecto MVC Vs 5.0\SistemaMVC\Sistema_MVC_Web2\bin\System.Web.Webpages.Deployment.dll
+D:\Proyecto MVC Vs 5.0\SistemaMVC\Sistema_MVC_Web2\bin\System.Web.Webpages.dll
+D:\Proyecto MVC Vs 5.0\SistemaMVC\Sistema_MVC_Web2\bin\System.Web.Webpages.Razor.dll
+D:\Proyecto MVC Vs 5.0\SistemaMVC\Sistema_MVC_Web2\bin\EntityFramework.xml
+D:\Proyecto MVC Vs 5.0\SistemaMVC\Sistema_MVC_Web2\bin\EntityFramework.SqlServer.xml
+D:\Proyecto MVC Vs 5.0\SistemaMVC\Sistema_MVC_Web2\bin\System.Web.Razor.xml
+D:\Proyecto MVC Vs 5.0\SistemaMVC\Sistema_MVC_Web2\bin\System.Web.Webpages.xml
+D:\Proyecto MVC Vs 5.0\SistemaMVC\Sistema_MVC_Web2\bin\System.Web.Webpages.Deployment.xml
+D:\Proyecto MVC Vs 5.0\SistemaMVC\Sistema_MVC_Web2\bin\System.Web.Webpages.Razor.xml
+D:\Proyecto MVC Vs 5.0\SistemaMVC\Sistema_MVC_Web2\bin\System.Web.Helpers.xml
+D:\Proyecto MVC Vs 5.0\SistemaMVC\Sistema_MVC_Web2\bin\System.Web.Mvc.xml
+D:\Proyecto MVC Vs 5.0\SistemaMVC\Sistema_MVC_Web2\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Proyecto MVC Vs 5.0\SistemaMVC\Sistema_MVC_Web2\bin\es\System.Web.Razor.resources.dll
+D:\Proyecto MVC Vs 5.0\SistemaMVC\Sistema_MVC_Web2\bin\es\System.Web.Webpages.resources.dll
+D:\Proyecto MVC Vs 5.0\SistemaMVC\Sistema_MVC_Web2\bin\es\System.Web.Webpages.Deployment.resources.dll
+D:\Proyecto MVC Vs 5.0\SistemaMVC\Sistema_MVC_Web2\bin\es\System.Web.Webpages.Razor.resources.dll
+D:\Proyecto MVC Vs 5.0\SistemaMVC\Sistema_MVC_Web2\bin\es\System.Web.Helpers.resources.dll
+D:\Proyecto MVC Vs 5.0\SistemaMVC\Sistema_MVC_Web2\bin\es\System.Web.Mvc.resources.dll
+D:\Proyecto MVC Vs 5.0\SistemaMVC\Sistema_MVC_Web2\obj\Debug\Sistema_MVC_Web2.csprojAssemblyReference.cache
+D:\Proyecto MVC Vs 5.0\SistemaMVC\Sistema_MVC_Web2\obj\Debug\Sistema_MVC_Web2.csproj.CoreCompileInputs.cache
+D:\Proyecto MVC Vs 5.0\SistemaMVC\Sistema_MVC_Web2\obj\Debug\Sistema_MVC_Web2.csproj.CopyComplete
+D:\Proyecto MVC Vs 5.0\SistemaMVC\Sistema_MVC_Web2\obj\Debug\Sistema_MVC_Web2.dll
+D:\Proyecto MVC Vs 5.0\SistemaMVC\Sistema_MVC_Web2\obj\Debug\Sistema_MVC_Web2.pdb

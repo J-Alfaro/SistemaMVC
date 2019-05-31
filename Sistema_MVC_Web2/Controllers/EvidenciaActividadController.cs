@@ -47,11 +47,11 @@ namespace Sistema_MVC_Web2.Controllers
                     file.SaveAs(Server.MapPath("~/Imagenes/" + file.FileName));
 
                     objEvidenciaActividad.archivo = file.FileName;
-                    objEvidenciaActividad.tamanio = Path.GetExtension(file.FileName);
+                    objEvidenciaActividad.tamanio = Convert.ToString(Math.Round((Convert.ToDecimal(file.ContentLength) / (1024 * 1024)), 2)) + " Mb";
                     objEvidenciaActividad.tipo = Path.GetExtension(file.FileName);
                 }
                 objEvidenciaActividad.Guardar();
-                return Redirect("~/EvidenciaActividad");
+                return Redirect("~/Actividad/");
             }
             else
             {

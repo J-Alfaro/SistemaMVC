@@ -258,6 +258,7 @@
     <Content Include="Views\EvidenciaActividad\AgregarEditar.cshtml" />
     <Content Include="Views\EvidenciaActividad\Index.cshtml" />
     <Content Include="Views\EvidenciaActividad\Visualizar.cshtml" />
+    <Content Include="Views\Actividad\DetalleActividad.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
