@@ -26,11 +26,14 @@
             <div class="panel panel-default">
                 <div class="paneñ-heading">Informacion del DetalleAsignacion</div>
                 <div class="panel-body">
-
+                    @if (Model.detalleasignacion_id > 0)
+                    {
+                     Model.detalleasignacion_id = 0;
                     <div class="form-group">
                         @Html.Label("id:")
                         @Html.TextBoxFor(x => x.detalleasignacion_id, new { @class = "form-control", disabled = true })
                     </div>
+                    }
                     <div class="form-group">
                         @Html.Label("Asignacion:")
                         <select name="asignacion_id" class="form-control">
