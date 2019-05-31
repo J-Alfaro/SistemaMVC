@@ -21,7 +21,7 @@
 <div class="card">
     <h5 class="card-header">Agregar / Editar Evidencia Actividad</h5>
     <div class="card-body">
-        @using (Html.BeginForm("Guardar", "EvidenciaActividad", FormMethod.Post, new { id = "frm-evidencia" }))
+        @using (Html.BeginForm("Guardar", "EvidenciaActividad", FormMethod.Post, new { id = "frm-evidencia", enctype = "multipart/form-data" }))
         {
             @Html.HiddenFor(x => x.evidenciaactividad_id)
             <div class="panel panel-default">
@@ -30,8 +30,13 @@
                 </div>
                 <div class="panel-body">
                     <div class="form-group">
+                        @Html.Label("Id")
+                        @Html.TextBoxFor(x => x.evidenciaactividad_id, new { @class = "form-control", disabled = true })
+
+                    </div>
+                    <div class="form-group">
                         @Html.Label("Actividad:")
-                        <select name="actividad_id" class="form-control">
+                        <select name="actividad_id" class="form-control" @*disabled="true"*@>
                             <option @(Model.actividad_id.Equals("") ? "selected" : "") value="">-Seleccione-</option>
                             @foreach (var a in actividad)
                             {
@@ -42,11 +47,24 @@
                     </div>
 
 
+                    @*<div class="form-group">
+            @Html.Label(" Archivo:")
+            @Html.TextBoxFor(x => x.archivo, new { @class = "form-control" })
+        </div>*@
+
                     <div class="form-group">
-                        @Html.Label(" Archivo:")
-                        @Html.TextBoxFor(x => x.archivo, new { @class = "form-control" })
+                        @Html.Label("Archivo")
+                        @if (Model.actividad_id > 0)
+                        {
+                            <img src="~/Imagenes/@Model.archivo" height="80" width="80" />
+                            @Html.HiddenFor(x => x.archivo)
+                        }
+
+                        <input type="file" name="file" />
+
                     </div>
-                    <div class="form-group">
+
+                    @*<div class="form-group">
                         @Html.Label(" Tamaño:")
                         @Html.TextBoxFor(x => x.tamanio, new { @class = "form-control" })
 
@@ -56,7 +74,7 @@
                         @Html.Label(" Tipo:")
                         @Html.TextBoxFor(x => x.tipo, new { @class = "form-control" })
 
-                    </div>
+                    </div>*@
 
                     <div class="form-group">
                         @Html.Label(" Descripcion:")

@@ -16,15 +16,15 @@ namespace Sistema_MVC_Web2.Models
 
         public int actividad_id { get; set; }
 
-        [Required]
+        //[Required]
         [StringLength(250)]
         public string archivo { get; set; }
 
-        [Required]
+        //[Required]
         [StringLength(10)]
         public string tamanio { get; set; }
 
-        [Required]
+        //[Required]
         [StringLength(10)]
         public string tipo { get; set; }
 
