@@ -177,6 +177,7 @@
     <Compile Include="Controllers\DetalleAsignacionController.cs" />
     <Compile Include="Controllers\DocenteController.cs" />
     <Compile Include="Controllers\EstudianteController.cs" />
+    <Compile Include="Controllers\EvidenciaActividadController.cs" />
     <Compile Include="Controllers\EvidenciaCriterioController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
