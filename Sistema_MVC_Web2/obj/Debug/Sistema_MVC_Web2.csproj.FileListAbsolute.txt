@@ -351,3 +351,4 @@ D:\Proyecto MVC Vs 4.0\SistemaMVC\Sistema_MVC_Web2\obj\Debug\Sistema_MVC_Web2.cs
 D:\Proyecto MVC Vs 4.0\SistemaMVC\Sistema_MVC_Web2\obj\Debug\Sistema_MVC_Web2.csproj.CopyComplete
 D:\Proyecto MVC Vs 4.0\SistemaMVC\Sistema_MVC_Web2\obj\Debug\Sistema_MVC_Web2.dll
 D:\Proyecto MVC Vs 4.0\SistemaMVC\Sistema_MVC_Web2\obj\Debug\Sistema_MVC_Web2.pdb
+D:\Proyecto MVC Vs 4.0\SistemaMVC\Sistema_MVC_Web2\obj\Debug\Sistema_MVC_Web2.csprojAssemblyReference.cache

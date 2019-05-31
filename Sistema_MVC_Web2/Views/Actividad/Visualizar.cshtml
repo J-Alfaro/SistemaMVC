@@ -3,21 +3,19 @@
     ViewBag.Title = "Visualizar";
 }
 
-<h2>Visualizar</h2>
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
         <li class="breadcrumb-item">
             <a href="~/Actividad/Index">Actividad</a>
         </li>
         <li class="breadcrumb-item" active>@Model.nombre</li>
-
     </ol>
 
 </nav>
+
 <div class="card">
     <div class="card-header">
         Informacion detallada del actividad
-
     </div>
     <div class="card-body">
         <dl class="dl-horizontal">
@@ -31,17 +29,10 @@
             <dd>@Model.nombre</dd>
             <dt>Descripcion</dt>
             <dd>@Model.descripcion</dd>
-
-            
-
             <dt>Fecha</dt>
             <dd>@Model.fecha</dd>
-
             <dt>URL</dt>
             <dd>@Model.urlactividad</dd>
-
-           
-
             <dt>Estado</dt>
             <dd>@(Model.estado == "A" ? "Activo" : "Inactivo")</dd>
 
@@ -49,4 +40,7 @@
 
     </div>
 
+</div>
+<div id="vista2">
+    @{Html.RenderAction("DetalleActividad", "Actividad", new ViewDataDictionary(new { id = Model.actividad_id })); }
 </div>

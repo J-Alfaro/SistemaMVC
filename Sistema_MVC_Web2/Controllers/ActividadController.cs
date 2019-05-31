@@ -14,6 +14,7 @@ namespace Sistema_MVC_Web2.Controllers
         private Actividad objActividad = new Actividad();
         private Criterio objCriterio = new Criterio();
         private Semestre objSemestre = new Semestre();
+        private EvidenciaActividad objEvidenciaActividad = new EvidenciaActividad();
 
         //private DetalleAsignacion objDetalleAsignacion = new DetalleAsignacion();
         // GET: Asignacion
@@ -55,12 +56,18 @@ namespace Sistema_MVC_Web2.Controllers
             }
         }
 
-        //accion eleiminar
+        //accion eliminar
         public ActionResult Eliminar(int id)
         {
             objActividad.actividad_id = id;
             objActividad.Eliminar();
             return Redirect("~/Actividad");
+        }
+
+        public ActionResult DetalleActividad(int id)
+        {
+            ViewBag.id = id;
+            return View(objEvidenciaActividad.Listar());
         }
     }
 }

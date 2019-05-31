@@ -51,7 +51,7 @@ namespace Sistema_MVC_Web2.Controllers
                     objEvidenciaActividad.tipo = Path.GetExtension(file.FileName);
                 }
                 objEvidenciaActividad.Guardar();
-                return Redirect("~/EvidenciaActividad");
+                return Redirect("~/Actividad/");
             }
             else
             {

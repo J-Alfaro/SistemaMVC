@@ -3,54 +3,55 @@
     ViewBag.Title = "Index";
 }
 
-<h2 class="card" text-center>Gestion de Actividad</h2>
-<br />
-<div class="text-right">
-    <a href="~/Actividad/AgregarEditar/" class="btn btn-secondary text-right">
-        Nuevo registro
-    </a>
+<div class="card">
+    <h5 class="card-header">Lista de Evidencia Actividad</h5>
+    <div class="card-body">
+        <div class="text-right">
+            <a href="~/Actividad/AgregarEditar/" class="btn btn-secondary text-right">
+                Nuevo registro
+            </a>
+        </div>
+        <br />
+
+        <table id="example" class="table table-hover">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Semestre</th>
+                    <th>Criterio</th>
+                    <th>Nombre Actividad</th>
+                    <th>Descripcion </th>
+                    <th>Fecha</th>
+                    <th>Estado</th>
+                    <th style="width:250px">Acciones  </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var u in Model)
+                {
+                <tr>
+                    <td>@(u.actividad_id)</td>
+                    <td>@(u.Semestre.nombre)</td>
+                    <td>@(u.Criterio.nombre_spanish)</td>
+                    <td>@(u.nombre)</td>
+                    <td>@(u.descripcion)</td>
+                    <td>@(u.fecha)</td>
+                    @if (u.estado == "A")
+                    {
+                        <td><span class="badge badge-success">Activo</span></td>
+                    }
+                    else
+                    {
+                        <td><span class="badge badge-danger">Inactivo</span></td>
+                    }
+                    <th style="align-content:center">
+                        <a href="~/Actividad/Visualizar/@u.actividad_id" class="btn btn-xs btn-warning btn-sm">Visualizar</a>
+                        <a href="~/Actividad/AgregarEditar/@u.actividad_id" class="btn btn-xs btn-primary btn-sm">Modificar</a>
+                        <a href="~/Actividad/Eliminar/@u.actividad_id" class="btn btn-xs btn-danger btn-sm" onclick="return confirm('¿Esta Seguro de Eliminar.........?');">Eliminar</a>
+                    </th>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
 </div>
-<br />
-
-
-<table class="table">
-    <thead>
-        <tr>
-            <th style="width:50px">ID  </th>
-            <th style="width:100px">Semestre  </th>
-            
-            <th style="width:80px">Criterio  </th>
-            <th style="width:80px">Nombre Actividad </th>
-            <th style="width:80px">Descripcion </th>
-            <th style="width:80px">Fecha  </th>
-            <th style="width:80px">urlactividad  </th>
-          
-            <th style="width:80px">Estado  </th>
-            <th style="width:200px">Acciones  </th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var u in Model)
-        {
-            <tr>
-                <th>@(u.actividad_id)</th>
-                <th>@(u.Semestre.nombre)</th>
-            
-                <th>@(u.Criterio.nombre_spanish)</th>
-                <th>@(u.nombre)</th>
-                <th>@(u.descripcion)</th>
-                <th>@(u.fecha)</th>
-                <th>@(u.urlactividad)</th>
-          
-
-                <th>@(u.estado == "A" ? "Activo" : "Inactivo")</th>
-                <th style="align-content:center">
-                    <a href="~/Actividad/Visualizar/@u.actividad_id" class="btn btn-xs btn-warning">Visualizar</a>
-                    <a href="~/Actividad/AgregarEditar/@u.actividad_id" class="btn btn-xs btn-primary">Modificar</a>
-                    <a href="~/Actividad/Eliminar/@u.actividad_id" class="btn btn-xs btn-danger" onclick="return confirm('¿Esta Seguro de Eliminar.........?');">Eliminar</a>
-                </th>
-            </tr>
-        }
-    </tbody>
-</table>
-
