@@ -13,6 +13,7 @@ namespace Sistema_MVC_Web2.Controllers
     {
         private Criterio objCriterio = new Criterio();
         private Modelo objModelo = new Modelo();
+        private EvidenciaCriterio objevidenciaCriterio = new EvidenciaCriterio();
         // GET: Criterio
         public ActionResult Index()
         {
@@ -57,6 +58,18 @@ namespace Sistema_MVC_Web2.Controllers
             objCriterio.criterio_id = id;
             objCriterio.Eliminar();
             return Redirect("~/Criterio");
+        }
+
+        public ActionResult DetalleModelo(int id)
+        {
+            ViewBag.id = id;
+            return View(objModelo.Listar());
+        }
+
+        public ActionResult DetalleEvidenciaCriterio(int id1)
+        {
+            ViewBag.id1 = id1;
+            return View(objevidenciaCriterio.Listar());
         }
     }
 }
