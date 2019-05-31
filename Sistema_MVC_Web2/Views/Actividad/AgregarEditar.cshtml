@@ -1,0 +1,106 @@
+﻿@model Sistema_MVC_Web2.Models.Actividad
+@{
+
+   
+    List<Sistema_MVC_Web2.Models.Criterio> criterio = new Sistema_MVC_Web2.Models.Criterio().Listar();
+    List<SelectListItem> listCriterio = new List<SelectListItem>();
+
+    foreach (var i in criterio)
+    {
+        SelectListItem one = new SelectListItem() { Text = i.nombre_spanish, Value = i.criterio_id.ToString() };
+        listCriterio.Add(one);
+    }
+
+
+
+
+
+    List<Sistema_MVC_Web2.Models.Semestre> semestre = new Sistema_MVC_Web2.Models.Semestre().Listar();
+    List<SelectListItem> sem = new List<SelectListItem>();
+
+    foreach (var i in semestre) {
+        SelectListItem one = new SelectListItem() { Text = i.nombre, Value = i.semestre_id.ToString() };
+        sem.Add(one);
+    }
+}
+
+
+<h2>Agregar / Editar</h2>
+
+<ol class="breadcrumb">
+    <li><a href="~/Actividad">Actividad | </a></li>
+    @*<li class="active">@(Model.actividad_id > 0 ? Model.nombre : "|  Nuevo Registro")</li>*@
+</ol>
+@using (Html.BeginForm("Guardar", "Actividad", FormMethod.Post, new { id = "frm-actividad" }))
+{
+    @Html.HiddenFor(x => x.actividad_id)
+    <div class="panel panel-default">
+        <div class="paneñ-heading">Informacion del Actividad</div>
+        <div class="panel-body">
+
+            <div class="form-group">
+                @Html.Label("id:")
+                @Html.TextBoxFor(x => x.actividad_id, new { @class = "form-control", disabled = true })
+            </div>
+            <div class="form-group">
+                @Html.Label("Semestre:")
+            
+
+                @Html.DropDownListFor(x => x.semestre_id,sem,"Seleccione", new  {@class = "form-control"})
+
+                
+                @Html.ValidationMessageFor(x => x.semestre_id, null, new { @class = "label label-danger" })
+            </div>
+            <div class="form-group">
+                @Html.Label("Criterio:")
+                @Html.DropDownListFor(x => x.criterio_id, listCriterio, "Seleccione", new { @class = "form-control" })
+                @Html.ValidationMessageFor(x => x.criterio_id, null, new { @class = "label label-danger" })
+            </div>
+            <div class="form-group">
+                @Html.Label("Nombre:")
+                @Html.TextBoxFor(x => x.nombre, new { @class = "form-control" })
+                @Html.ValidationMessageFor(x => x.nombre, null, new { @class = "label label-danger" })
+            </div>
+
+            <div class="col-md-4">
+                @Html.Label("Descripcion")
+                <div class="form-group">
+                    <div class="cal-icon">
+                        @Html.TextBoxFor(x => x.descripcion, new { @class = "form-control datetimepicker" })
+                        @Html.ValidationMessageFor(x => x.descripcion, null, new { @class = "label label-danger" })
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                @Html.Label("Fecha")
+                <div class="form-group">
+                    <div class="cal-icon">
+                        @Html.TextBoxFor(x => x.fecha, new { @class = "form-control datetimepicker" })
+                        @Html.ValidationMessageFor(x => x.fecha, null, new { @class = "label label-danger" })
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                @Html.Label("URL")
+                <div class="form-group">
+                    <div class="cal-icon">
+                        @Html.TextBoxFor(x => x.urlactividad, new { @class = "form-control datetimepicker" })
+                        @Html.ValidationMessageFor(x => x.urlactividad, null, new { @class = "label label-danger" })
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.Label("Estado:")
+                <br />
+                @Html.RadioButtonFor(x => x.estado, "A")<span> Activo</span>
+                @Html.RadioButtonFor(x => x.estado, "I")<span> Inactivo</span>
+                @Html.ValidationMessageFor(x => x.estado, null, new { @class = "label label-danger" })
+            </div>
+        </div>
+    </div>
+    <div class="text-right">
+        <button type="submit" class="btn btn-primary">Grabar</button>
+        <a href="~/Actividad" class="btn btn-danger">Cancelar</a>
+    </div>
+}   

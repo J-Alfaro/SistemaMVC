@@ -31,7 +31,7 @@ namespace Sistema_MVC_Web2.Controllers
         //Acccion agregar editar
         public ActionResult AgregarEditar(int id = 0)
         {
-            ViewBag.Semestre = objCriterio.Listar();
+            ViewBag.Criterio = objCriterio.Listar();
             ViewBag.Semestre = objSemestre.Listar();
             return View(
                 id == 0 ? new Actividad() // Agregar un nuevo objeto
@@ -40,18 +40,18 @@ namespace Sistema_MVC_Web2.Controllers
         }
 
         //Accion Guardar
-        public ActionResult Guardar(Asignacion objAsignacion)
+        public ActionResult Guardar(Actividad objActividad)
         {
             if (ModelState.IsValid)
             {
 
-                objAsignacion.Guardar();
+                objActividad.Guardar();
 
-                return Redirect("~/Asignacion");
+                return Redirect("~/Actividad");
             }
             else
             {
-                return View("~/Views/Asignacion/AgregarEditar.cshtml");
+                return View("~/Views/Actividad/AgregarEditar.cshtml");
             }
         }
 
@@ -60,7 +60,7 @@ namespace Sistema_MVC_Web2.Controllers
         {
             objActividad.actividad_id = id;
             objActividad.Eliminar();
-            return Redirect("~/Asignacion");
+            return Redirect("~/Actividad");
         }
     }
 }

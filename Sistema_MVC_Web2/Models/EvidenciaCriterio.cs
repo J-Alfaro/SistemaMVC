@@ -6,12 +6,9 @@ namespace Sistema_MVC_Web2.Models
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
     using System.Linq;
-    using System.Data.Entity;
-
-    using System.Data.Entity.Validation;
-    using System.Web;
     using System.IO;
 
+    using System.Data.Entity;
     [Table("EvidenciaCriterio")]
     public partial class EvidenciaCriterio
     {
@@ -36,12 +33,15 @@ namespace Sistema_MVC_Web2.Models
         public string descripcion { get; set; }
 
         public virtual Criterio Criterio { get; set; }
-        
 
-        //Metodo listar
-        public List<EvidenciaCriterio> Listar()//Retorna una coleccion de registros
+    
+
+
+
+        //Metodo Listar
+        public List<EvidenciaCriterio> Listar()
         {
-            var objEvidenciaCriterio= new List<EvidenciaCriterio>();
+            var objEvidenciaCriterio = new List<EvidenciaCriterio>();
             try
             {
                 using (var db = new Modelo_Sistemas())
@@ -56,7 +56,7 @@ namespace Sistema_MVC_Web2.Models
             return objEvidenciaCriterio;
         }
 
-        //Metodo obtener
+        //Metodo Obtener
         public EvidenciaCriterio Obtener(int id)//retorna solo un objeto
         {
             var objEvidenciaCriterio = new EvidenciaCriterio();
@@ -64,9 +64,9 @@ namespace Sistema_MVC_Web2.Models
             {
                 using (var db = new Modelo_Sistemas())
                 {
-                    objEvidenciaCriterio = db.EvidenciaCriterio.Include("Criterio")
-                        .Where(x => x.evidencia_id == id)
-                        .SingleOrDefault();
+                    objEvidenciaCriterio = db.EvidenciaCriterio.Include("Criterio") 
+                                    .Where(x => x.evidencia_id == id)
+                                    .SingleOrDefault();
                 }
             }
             catch (Exception ex)
@@ -76,25 +76,22 @@ namespace Sistema_MVC_Web2.Models
             return objEvidenciaCriterio;
         }
 
-        //Metodo guardar
-        public void Guardar()//retorna solo un objeto
-        {
+        //Metodo Guardar
 
+        public void Guardar()
+        {
             try
             {
                 using (var db = new Modelo_Sistemas())
                 {
-                    if (this.evidencia_id > 0)
+                    if (this.evidencia_id > 0)//sis existe un valor mayor a cero es porque existe registro
                     {
-                        //si existe un valor mayor a 0 es porque existe un registro
-                        db.Entry(this).State = EntityState.Modified;
-
+                        db.Entry(this).State = System.Data.Entity.EntityState.Modified;
                     }
                     else
                     {
-                        //si no existe registro graba(nuevo registro)
-                        db.Entry(this).State = EntityState.Added;
-
+                        //SINO EXISTE EL REGISTRO LO GRABA(nuevo)
+                        db.Entry(this).State = System.Data.Entity.EntityState.Added;
                     }
                     db.SaveChanges();
                 }
@@ -103,18 +100,16 @@ namespace Sistema_MVC_Web2.Models
             {
                 throw;
             }
-
         }
 
-        //metodo Eliminar
+        //metodo Eliminar 
         public void Eliminar()
         {
-
             try
             {
                 using (var db = new Modelo_Sistemas())
                 {
-                    db.Entry(this).State = EntityState.Deleted;
+                    db.Entry(this).State = System.Data.Entity.EntityState.Deleted;
                     db.SaveChanges();
                 }
             }
@@ -122,11 +117,6 @@ namespace Sistema_MVC_Web2.Models
             {
                 throw;
             }
-
         }
-
-       
-        
-        
     }
 }

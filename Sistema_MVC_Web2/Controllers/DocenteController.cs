@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using Sistema_MVC_Web2.Models;
 using Sistema_MVC_Web2.Filters;
+using System.IO;
 
 namespace Sistema_MVC_Web2.Controllers
 {
@@ -48,6 +49,7 @@ namespace Sistema_MVC_Web2.Controllers
                     file.SaveAs(Server.MapPath("~/Imagenes/" + file.FileName));
 
                     objDocente.foto = file.FileName;
+                    
                 }
                 objDocente.Guardar();
                 return Redirect("~/Docente");

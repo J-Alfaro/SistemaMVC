@@ -3,20 +3,22 @@
     ViewBag.Title = "Visualizar";
 }
 
-
+<h2>Visualizar</h2>
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
         <li class="breadcrumb-item">
             <a href="~/DetalleAsignacion/Index">DetalleAsignacion</a>
         </li>
-        <li class="breadcrumb-item" active>@Model.asignacion_id</li>
+        <li class="breadcrumb-item" active>@Model.Asignacion</li>
+
     </ol>
+
 </nav>
 <div class="card">
-    <h5 class="card-header">
+    <div class="card-header">
         Informacion detallada del detalleasignacion
 
-    </h5>
+    </div>
     <div class="card-body">
         <dl class="dl-horizontal">
             <dt>Id</dt>

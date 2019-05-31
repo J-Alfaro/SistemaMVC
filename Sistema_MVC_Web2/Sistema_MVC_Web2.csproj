@@ -102,8 +102,6 @@
     <Content Include="assets\css\bootstrap-reboot.min.css" />
     <Content Include="assets\css\bootstrap.css" />
     <Content Include="assets\css\bootstrap.min.css" />
-    <Content Include="assets\DataTables\bootstrap.min.css" />
-    <Content Include="assets\DataTables\dashboard.css" />
     <Content Include="assets\DataTables\DataTables-1.10.18\css\dataTables.bootstrap.css" />
     <Content Include="assets\DataTables\DataTables-1.10.18\css\dataTables.bootstrap.min.css" />
     <Content Include="assets\DataTables\DataTables-1.10.18\css\dataTables.bootstrap4.css" />
@@ -133,15 +131,10 @@
     <Content Include="assets\DataTables\DataTables-1.10.18\js\dataTables.semanticui.min.js" />
     <Content Include="assets\DataTables\DataTables-1.10.18\js\jquery.dataTables.js" />
     <Content Include="assets\DataTables\DataTables-1.10.18\js\jquery.dataTables.min.js" />
-    <Content Include="assets\DataTables\dataTables.bootstrap4.min.css" />
-    <Content Include="assets\DataTables\dataTables.bootstrap4.min.js" />
     <Content Include="assets\DataTables\datatables.css" />
     <Content Include="assets\DataTables\datatables.js" />
     <Content Include="assets\DataTables\datatables.min.css" />
     <Content Include="assets\DataTables\datatables.min.js" />
-    <Content Include="assets\DataTables\jquery.dataTables.min.js" />
-    <Content Include="assets\DataTables\jquery.min.js" />
-    <Content Include="assets\DataTables\popper.js" />
     <Content Include="assets\js\bootstrap.bundle.min.js" />
     <Content Include="assets\js\bootstrap.js" />
     <Content Include="assets\js\bootstrap.min.js" />
@@ -151,10 +144,6 @@
     <Content Include="assets\js\jquery.js" />
     <Content Include="assets\js\jquery.validate.min.js" />
     <Content Include="assets\js\jquery.validate.unobtrusive.min.js" />
-    <Content Include="assets\login\estilo_login.css" />
-    <Content Include="assets\login\login.js" />
-    <Content Include="assets\login\login.svg" />
-    <Content Include="assets\login\logo_login.png" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -168,8 +157,6 @@
     <Content Include="Imagenes\usuario3.png" />
     <Content Include="Imagenes\usuario4.png" />
     <Content Include="Imagenes\usuario5.png" />
-    <Content Include="Imagenes\usuario6.png" />
-    <Content Include="Imagenes\usuario7.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
@@ -185,11 +172,11 @@
     <Compile Include="Controllers\ActividadController.cs" />
     <Compile Include="Controllers\AsignacionController.cs" />
     <Compile Include="Controllers\ControlAsignacionController.cs" />
+    <Compile Include="Controllers\ControlController.cs" />
     <Compile Include="Controllers\CriterioController.cs" />
     <Compile Include="Controllers\DetalleAsignacionController.cs" />
     <Compile Include="Controllers\DocenteController.cs" />
     <Compile Include="Controllers\EstudianteController.cs" />
-    <Compile Include="Controllers\EvidenciaActividadController.cs" />
     <Compile Include="Controllers\EvidenciaCriterioController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
@@ -257,14 +244,16 @@
     <Content Include="Views\Usuario\Visualizar.cshtml" />
     <Content Include="Views\Usuario\AgregarEditar.cshtml" />
     <Content Include="Views\Asignacion\DetalleAsignacion.cshtml" />
-    <Content Include="Views\EvidenciaCriterio\Index.cshtml" />
-    <Content Include="Views\EvidenciaCriterio\Visualizar.cshtml" />
-    <Content Include="Views\EvidenciaCriterio\AgregarEditar.cshtml" />
     <Content Include="Views\ControlAsignacion\AgregarEditar.cshtml" />
     <Content Include="Views\ControlAsignacion\Visualizar.cshtml" />
-    <Content Include="Views\EvidenciaActividad\Index.cshtml" />
-    <Content Include="Views\EvidenciaActividad\Visualizar.cshtml" />
-    <Content Include="Views\EvidenciaActividad\AgregarEditar.cshtml" />
+    <Content Include="Views\EvidenciaCriterio\Index.cshtml" />
+    <Content Include="Views\EvidenciaCriterio\AgregarEditar.cshtml" />
+    <Content Include="Views\Actividad\AgregarEditar.cshtml" />
+    <Content Include="Views\Actividad\Visualizar.cshtml" />
+    <Content Include="Views\Control\Index.cshtml" />
+    <Content Include="Views\Control\Visualizar.cshtml" />
+    <Content Include="Views\Control\AgregarEditar.cshtml" />
+    <Content Include="Views\Control\DetalleControl.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
