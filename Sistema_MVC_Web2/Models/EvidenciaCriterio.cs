@@ -13,19 +13,19 @@ namespace Sistema_MVC_Web2.Models
     public partial class EvidenciaCriterio
     {
         [Key]
-        public int evidencia_id { get; set; }
+        public int evidenciacriterio_id { get; set; }
 
         public int criterio_id { get; set; }
 
-        [Required]
+        //[Required]
         [StringLength(250)]
         public string archivo { get; set; }
 
-        [Required]
+        //[Required]
         [StringLength(10)]
         public string tamanio { get; set; }
 
-        [Required]
+        //[Required]
         [StringLength(10)]
         public string tipo { get; set; }
 
@@ -34,7 +34,7 @@ namespace Sistema_MVC_Web2.Models
 
         public virtual Criterio Criterio { get; set; }
 
-    
+
 
 
 
@@ -64,8 +64,8 @@ namespace Sistema_MVC_Web2.Models
             {
                 using (var db = new Modelo_Sistemas())
                 {
-                    objEvidenciaCriterio = db.EvidenciaCriterio.Include("Criterio") 
-                                    .Where(x => x.evidencia_id == id)
+                    objEvidenciaCriterio = db.EvidenciaCriterio.Include("Criterio")
+                                    .Where(x => x.evidenciacriterio_id == id)
                                     .SingleOrDefault();
                 }
             }
@@ -84,7 +84,7 @@ namespace Sistema_MVC_Web2.Models
             {
                 using (var db = new Modelo_Sistemas())
                 {
-                    if (this.evidencia_id > 0)//sis existe un valor mayor a cero es porque existe registro
+                    if (this.evidenciacriterio_id > 0)//sis existe un valor mayor a cero es porque existe registro
                     {
                         db.Entry(this).State = System.Data.Entity.EntityState.Modified;
                     }

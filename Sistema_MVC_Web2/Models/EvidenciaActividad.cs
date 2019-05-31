@@ -82,13 +82,13 @@ namespace Sistema_MVC_Web2.Models
                     if (this.evidenciaactividad_id > 0)
                     {
                         //si existe un valor mayor a 0 es porque existe un registro
-                        db.Entry(this).State = EntityState.Modified;
+                        db.Entry(this).State = System.Data.Entity.EntityState.Modified;
 
                     }
                     else
                     {
                         //si no existe registro graba(nuevo registro)
-                        db.Entry(this).State = EntityState.Added;
+                        db.Entry(this).State = System.Data.Entity.EntityState.Added;
 
                     }
                     db.SaveChanges();
@@ -108,7 +108,7 @@ namespace Sistema_MVC_Web2.Models
             {
                 using (var db = new Modelo_Sistemas())
                 {
-                    db.Entry(this).State = EntityState.Deleted;
+                    db.Entry(this).State = System.Data.Entity.EntityState.Deleted;
                     db.SaveChanges();
                 }
             }

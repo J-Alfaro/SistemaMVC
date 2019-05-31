@@ -50,39 +50,27 @@ namespace Sistema_MVC_Web2.Controllers
                 {
                     string archivo = (file.FileName).ToLower();
 
-                    int size = 1024 * 1024 * 5;
-                    var filtroextencion = new[] { ".jpg", ".jpge", ".png", ".gif" };
-                    var extenciones = Path.GetExtension(file.FileName);
-                    if (filtroextencion.Contains(extenciones) && (file.ContentLength <= size))
-                    {
+                    file.SaveAs(Server.MapPath("~/Imagenes/" + file.FileName));
 
-                        file.SaveAs(Server.MapPath("~/Imagenes/" + file.FileName));
-
-                        objEvidenciaCriterio.archivo = file.FileName;
-                    }
+                    objEvidenciaCriterio.archivo = file.FileName;
+                    objEvidenciaCriterio.tamanio = Convert.ToString(Math.Round((Convert.ToDecimal(file.ContentLength) / (1024 * 1024)), 2)) + " Mb";
+                    objEvidenciaCriterio.tipo = Path.GetExtension(file.FileName);
                 }
-
-               
-
                 objEvidenciaCriterio.Guardar();
-
-                return Redirect("~/EvidenciaCriterio");
+                return Redirect("~/Criterio/");
             }
             else
             {
                 return View("~/Views/EvidenciaCriterio/AgregarEditar.cshtml");
             }
 
-
-
-            
         }
 
         //Action Eliminar
 
         public ActionResult Eliminar(int id)
         {
-            objEvidenciaCriterio.evidencia_id = id;
+            objEvidenciaCriterio.evidenciacriterio_id = id;
             objEvidenciaCriterio.Eliminar();
             return Redirect("~/EvidenciaCriterio");
         }

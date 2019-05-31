@@ -2,7 +2,6 @@
 
 @{
     ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/Layout.cshtml";
 }
 
 <h2 class="card" text-center>Gestion de EvidenciaCriterios</h2>
@@ -31,19 +30,18 @@
         @foreach (var s in Model)
         {
             <tr>
-                <th>@(s.evidencia_id)</th>
+                <th>@(s.evidenciacriterio_id)</th>
                 <th>@(s.Criterio.nombre_spanish)</th>
                 <th>@(s.archivo)</th>
                 <th>@(s.tamanio)</th>
                 <th>@(s.tipo)</th>
                 <th>@(s.descripcion)</th>
                 <th style="text-align:center;">
-                    <a href="~/EvidenciaCriterio/Visualizar/@s.evidencia_id" class="btn btn-xs btn-warning">Visualizar</a>
-                    <a href="~/EvidenciaCriterio/AgregarEditar/@s.evidencia_id" class="btn btn-xs btn-primary">Modificar</a>
-                    <a href="~/EvidenciaCriterio/Eliminar/@s.evidencia_id" class="btn btn-xs btn-danger" onclick="return confirm('¿Estas seguro qu desea eliminar?');">Eliminar</a>
+                    <a href="~/EvidenciaCriterio/Visualizar/@s.evidenciacriterio_id" class="btn btn-xs btn-warning">Visualizar</a>
+                    <a href="~/EvidenciaCriterio/AgregarEditar/@s.evidenciacriterio_id" class="btn btn-xs btn-primary">Modificar</a>
+                    <a href="~/EvidenciaCriterio/Eliminar/@s.evidenciacriterio_id" class="btn btn-xs btn-danger" onclick="return confirm('¿Estas seguro qu desea eliminar?');">Eliminar</a>
                 </th>
             </tr>
         }
     </tbody>
 </table>
-

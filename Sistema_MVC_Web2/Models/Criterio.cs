@@ -132,7 +132,7 @@ namespace Sistema_MVC_Web2.Models
             {
                 using (var db = new Modelo_Sistemas())
                 {
-                    db.Entry(this).State = EntityState.Deleted;
+                    db.Entry(this).State = System.Data.Entity.EntityState.Deleted;
                     db.SaveChanges();
                 }
             }
