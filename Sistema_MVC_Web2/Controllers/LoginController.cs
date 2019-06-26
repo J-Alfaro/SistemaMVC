@@ -19,7 +19,7 @@ namespace Sistema_MVC_Web2.Controllers
             return View();
         }
 
-        public JsonResult Validar(string Usuario, string Password)
+        public JsonResult Validar(string Usuario, string Password,Usuario user)
         {
             var rm = usuario.ValidarLogin(Usuario, Password);
             if (rm.response)

@@ -6,15 +6,86 @@ using System.Web.Mvc;
 using Sistema_MVC_Web2.Models;
 using Sistema_MVC_Web2.Filters;
 
+
+
+using jsreport.MVC;
+using jsreport.Types;
+
+
 namespace Sistema_MVC_Web2.Controllers
 {
     [Autenticado]
     public class HomeController : Controller
     {
-        // GET: Demo
         public ActionResult Index()
         {
             return View();
         }
+
+        [EnableJsReport()]
+        public ActionResult Invoice()
+        {
+            HttpContext.JsReportFeature().Recipe(Recipe.ChromePdf);
+            //HttpContext.JsReportFeature().Recipe(Recipe.ChromePdf);
+
+            return View(InvoiceModel.Example());
+        }
+
+        [EnableJsReport()]
+        public ActionResult InvoiceDownload()
+        {
+            HttpContext.JsReportFeature().Recipe(Recipe.ChromePdf)
+                .OnAfterRender((r) => HttpContext.Response.Headers["Content-Disposition"] = "attachment; filename=\"myReport.pdf\"");
+
+            return View("Invoice", InvoiceModel.Example());
+        }
+
+        [EnableJsReport()]
+        public ActionResult InvoiceWithHeader()
+        {
+            HttpContext.JsReportFeature()
+                .Recipe(Recipe.ChromePdf)
+                .Configure((r) => r.Template.Chrome = new Chrome
+                {
+                    HeaderTemplate = this.RenderViewToString("Header", new { }),
+                    DisplayHeaderFooter = true,
+                    MarginTop = "2cm",
+                    MarginLeft = "1cm",
+                    MarginBottom = "2cm",
+                    FooterTemplate = " "
+                });
+
+            return View("Invoice", InvoiceModel.Example());
+        }
+
+        [EnableJsReport()]
+        public ActionResult Items()
+        {
+            HttpContext.JsReportFeature()
+                .Recipe(Recipe.HtmlToXlsx);
+
+            return View(InvoiceModel.Example());
+        }
+
+        [EnableJsReport()]
+        public ActionResult ItemsExcelOnline()
+        {
+            HttpContext.JsReportFeature()
+                .Configure(req => req.Options.Preview = true)
+                .Recipe(Recipe.HtmlToXlsx);
+
+            return View("Items", InvoiceModel.Example());
+        }
+
+        [EnableJsReport()]
+        public ActionResult InvoiceDebugLogs()
+        {
+            HttpContext.JsReportFeature()
+                .DebugLogsToResponse()
+                .Recipe(Recipe.ChromePdf);
+
+            return View("Invoice", InvoiceModel.Example());
+        }
+
     }
 }
